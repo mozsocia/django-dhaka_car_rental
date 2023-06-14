@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Package Detail</title>
+</head>
+<body>
+    <h1>{{ package.title }}</h1>
+    <p>Details: {{ package.details }}</p>
+    <p>Price: {{ package.price }}</p>
+    <h2>Car Information</h2>
+    <p>Name: {{ package.car_name }}</p>
+    <p>Description: {{ package.car_description }}</p>
+    <img src="{{ package.car_image.url }}" alt="{{ package.car_name }}" width="200" height="200">
+    <h3>Specifications</h3>
+    <ul>
+        {% for spec in package.get_car_specifications %}
+        <li>{{ spec }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
