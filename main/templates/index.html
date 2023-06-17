@@ -429,14 +429,14 @@
 
         owl.on('change.owl.carousel', function (event) {
             var el = event.target;
-            $('h1', el).addClass('fadeInRight animated delay-2')
+            $('h1', el).addClass('fadeInLeft animated delay-2')
                 .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                    $('h1', el).removeClass('fadeInRight animated delay-2');
+                    $('h1', el).removeClass('fadeInLeft animated delay-2');
                 });
 
-            $('img', el).addClass('fadeInLeft animated delay-2')
+            $('img', el).addClass('fadeInRight animated delay-2')
                 .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                    $('img', el).removeClass('fadeInLeft animated delay-2');
+                    $('img', el).removeClass('fadeInRight animated delay-2');
                 });
         });
 
