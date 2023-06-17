@@ -4,23 +4,23 @@
 
 {% block style %}
 <style>
-  .text-light.jarallax::before {
-    content: '';
-    position: absolute;
-    top: -0px;
-    /* Adjust the top positioning to create space */
-    left: -8px;
-    /* Adjust the left positioning to create space */
-    right: -8px;
-    /* Adjust the right positioning to create space */
-    bottom: -0px;
-    /* Adjust the bottom positioning to create space */
+    .text-light.jarallax::before {
+        content: '';
+        position: absolute;
+        top: -0px;
+        /* Adjust the top positioning to create space */
+        left: -8px;
+        /* Adjust the left positioning to create space */
+        right: -8px;
+        /* Adjust the right positioning to create space */
+        bottom: -0px;
+        /* Adjust the bottom positioning to create space */
 
-    border: 8px solid #78ca5c;
-    /* Customize the border color, width, and style as needed */
-    pointer-events: none;
-    /* Ensures the pseudo-element doesn't interfere with mouse events */
-  }
+        border: 8px solid #78ca5c;
+        /* Customize the border color, width, and style as needed */
+        pointer-events: none;
+        /* Ensures the pseudo-element doesn't interfere with mouse events */
+    }
 </style>
 {% endblock style %}
 
@@ -29,312 +29,372 @@
 
 <!-- content begin -->
 <div class="no-bottom no-top" id="content">
-  <div id="top"></div>
-  <section id="section-hero" aria-label="section" class="full-height vertical-center"
-    data-bgimage="url({% static 'images/background/7.jpg' %}) bottom">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="spacer-double sm-hide"></div>
-        <div class="col-lg-6">
-          <h4><span class="id-color">Plan your trip now</span></h4>
-          <div class="spacer-10"></div>
-          <h1>Explore the world with comfortable car</h1>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.</p>
+    <div id="top"></div>
+    <section id="section-hero" aria-label="section" class="full-height vertical-center"
+        data-bgimage="url({% static 'images/background/7.jpg' %}) bottom">
 
-          <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black" href="#">Get the
-            App</a>
-        </div>
+        <div id="items-carousel-hero" class="owl-carousel ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="spacer-double sm-hide"></div>
+                    <div class="col-lg-6">
+                        <h4><span class="id-color">Plan your trip now</span></h4>
+                        <div class="spacer-10"></div>
+                        <h1>Explore the world with comfortable car</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
 
-        <div class="col-lg-6">
-          <img src="{% static 'images/misc/car-2.png' %}" class="img-fluid" alt="">
-        </div>
+                        <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
+                            href="#">Get the
+                            App</a>
+                    </div>
 
-      </div>
-    </div>
-  </section>
+                    <div class="col-lg-6">
+                        <img src="{% static 'images/misc/car-2.png' %}" class="img-fluid" alt="">
+                    </div>
 
-
-  <!-- feature secitons start -->
-
-  <section class="text-light jarallax" aria-label="section">
-    <img src="{% static 'images/background/3.jpg' %}" alt="" class="jarallax-img">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <h1>Let's Your Adventure Begin</h1>
-          <div class="spacer-20"></div>
-        </div>
-        <div class="col-md-3">
-          <i class="fa fa-trophy de-icon mb20"></i>
-          <h4>First Class Services</h4>
-          <p>Aliquip consequat excepteur non dolor irure ad irure labore ex eiusmod est duis culpa ex ut minim ut ea.
-          </p>
-        </div>
-        <div class="col-md-3">
-          <i class="fa fa-road de-icon mb20"></i>
-          <h4>24/7 road assistance</h4>
-          <p>Aliquip consequat excepteur non dolor irure ad irure labore ex eiusmod est duis culpa ex ut minim ut ea.
-          </p>
-        </div>
-        <div class="col-md-3">
-          <i class="fa fa-map-pin de-icon mb20"></i>
-          <h4>Free Pick-Up & Drop-Off</h4>
-          <p>Aliquip consequat excepteur non dolor irure ad irure labore ex eiusmod est duis culpa ex ut minim ut ea.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- feature secitons End -->
-
-  <section id="section-cars" >
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 offset-lg-3 text-center">
-                <h2>Our Vehicle Fleet</h2>
-                <p>Sit labore et officia eiusmod tempor officia eiusmod dolor exercitation nulla dolore ut id velit et ut anim.</p>
-                <div class="spacer-20"></div>
+                </div>
             </div>
 
-            <div class="clearfix"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="spacer-double sm-hide"></div>
+                    <div class="col-lg-6">
+                        <h4><span class="id-color">Plan your trip now</span></h4>
+                        <div class="spacer-10"></div>
+                        <h1>Explore the world with comfortable car</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
 
-            <div id="items-carousel" class="owl-carousel wow fadeIn">
+                        <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
+                            href="#">Get the
+                            App</a>
+                    </div>
 
-                <div class="col-lg-12">
-                    <div class="de-item mb30">
-                        <div class="d-img">
-                            <img src="{% static 'images/cars/jeep-renegade.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <div class="d-info">
-                            <div class="d-text">
-                                <h4>Jeep Renegade</h4>
-                                <div class="d-item_like">
-                                    <i class="fa fa-heart"></i><span>74</span>
-                                </div>
-                                <div class="d-atr-group">
-                                    <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">SUV</span>
-                                </div>
-                                <div class="d-price">
-                                    Daily rate from <span>$265</span>
-                                    <a class="btn-main" href="car-single.html">Rent Now</a>
+                    <div class="col-lg-6">
+                        <img src="{% static 'images/misc/car-3.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="spacer-double sm-hide"></div>
+                    <div class="col-lg-6">
+                        <h4><span class="id-color">Plan your trip now</span></h4>
+                        <div class="spacer-10"></div>
+                        <h1>Explore the world with comfortable car</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+
+                        <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
+                            href="#">Get the
+                            App</a>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="{% static 'images/misc/car-4.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- feature secitons start -->
+
+    <section class="text-light jarallax" aria-label="section">
+        <img src="{% static 'images/background/3.jpg' %}" alt="" class="jarallax-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h1>Let's Your Adventure Begin</h1>
+                    <div class="spacer-20"></div>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-trophy de-icon mb20"></i>
+                    <h4>First Class Services</h4>
+                    <p>Aliquip consequat excepteur non dolor irure ad irure labore ex eiusmod est duis culpa ex ut minim
+                        ut ea.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-road de-icon mb20"></i>
+                    <h4>24/7 road assistance</h4>
+                    <p>Aliquip consequat excepteur non dolor irure ad irure labore ex eiusmod est duis culpa ex ut minim
+                        ut ea.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-map-pin de-icon mb20"></i>
+                    <h4>Free Pick-Up & Drop-Off</h4>
+                    <p>Aliquip consequat excepteur non dolor irure ad irure labore ex eiusmod est duis culpa ex ut minim
+                        ut ea.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- feature secitons End -->
+
+    <section id="section-cars">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3 text-center">
+                    <h2>Our Vehicle Fleet</h2>
+                    <p>Sit labore et officia eiusmod tempor officia eiusmod dolor exercitation nulla dolore ut id velit
+                        et ut anim.</p>
+                    <div class="spacer-20"></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div id="items-carousel" class="owl-carousel wow fadeIn">
+
+                    <div class="col-lg-12">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{% static 'images/cars/jeep-renegade.jpg' %}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>Jeep Renegade</h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>74</span>
+                                    </div>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}"
+                                                alt="">SUV</span>
+                                    </div>
+                                    <div class="d-price">
+                                        Daily rate from <span>$265</span>
+                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <div class="de-item mb30">
-                        <div class="d-img">
-                            <img src="{% static 'images/cars/bmw-m5.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <div class="d-info">
-                            <div class="d-text">
-                                <h4>BMW M2</h4>
-                                <div class="d-item_like">
-                                    <i class="fa fa-heart"></i><span>36</span>
-                                </div>
-                                <div class="d-atr-group">
-                                    <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Sedan</span>
-                                </div>
-                                <div class="d-price">
-                                    Daily rate from <span>$244</span>
-                                    <a class="btn-main" href="car-single.html">Rent Now</a>
+                    <div class="col-lg-12">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{% static 'images/cars/bmw-m5.jpg' %}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>BMW M2</h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>36</span>
+                                    </div>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}"
+                                                alt="">Sedan</span>
+                                    </div>
+                                    <div class="d-price">
+                                        Daily rate from <span>$244</span>
+                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <div class="de-item mb30">
-                        <div class="d-img">
-                            <img src="{% static 'images/cars/ferrari-enzo.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <div class="d-info">
-                            <div class="d-text">
-                                <h4>Ferarri Enzo</h4>
-                                <div class="d-item_like">
-                                    <i class="fa fa-heart"></i><span>85</span>
-                                </div>
-                                <div class="d-atr-group">
-                                    <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Exotic Car</span>
-                                </div>
-                                <div class="d-price">
-                                    Daily rate from <span>$167</span>
-                                    <a class="btn-main" href="car-single.html">Rent Now</a>
+                    <div class="col-lg-12">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{% static 'images/cars/ferrari-enzo.jpg' %}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>Ferarri Enzo</h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>85</span>
+                                    </div>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Exotic
+                                            Car</span>
+                                    </div>
+                                    <div class="d-price">
+                                        Daily rate from <span>$167</span>
+                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <div class="de-item mb30">
-                        <div class="d-img">
-                            <img src="{% static 'images/cars/ford-raptor.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <div class="d-info">
-                            <div class="d-text">
-                                <h4>Ford Raptor</h4>
-                                <div class="d-item_like">
-                                    <i class="fa fa-heart"></i><span>59</span>
-                                </div>
-                                <div class="d-atr-group">
-                                    <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Pickup Truck</span>
-                                </div>
-                                <div class="d-price">
-                                    Daily rate from <span>$147</span>
-                                    <a class="btn-main" href="car-single.html">Rent Now</a>
+                    <div class="col-lg-12">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{% static 'images/cars/ford-raptor.jpg' %}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>Ford Raptor</h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>59</span>
+                                    </div>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Pickup
+                                            Truck</span>
+                                    </div>
+                                    <div class="d-price">
+                                        Daily rate from <span>$147</span>
+                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <div class="de-item mb30">
-                        <div class="d-img">
-                            <img src="{% static 'images/cars/mini-cooper.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <div class="d-info">
-                            <div class="d-text">
-                                <h4>Mini Cooper</h4>
-                                <div class="d-item_like">
-                                    <i class="fa fa-heart"></i><span>19</span>
-                                </div>
-                                <div class="d-atr-group">
-                                    <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Hatchback</span>
-                                </div>
-                                <div class="d-price">
-                                    Daily rate from <span>$238</span>
-                                    <a class="btn-main" href="car-single.html">Rent Now</a>
+                    <div class="col-lg-12">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{% static 'images/cars/mini-cooper.jpg' %}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>Mini Cooper</h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>19</span>
+                                    </div>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}"
+                                                alt="">Hatchback</span>
+                                    </div>
+                                    <div class="d-price">
+                                        Daily rate from <span>$238</span>
+                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <div class="de-item mb30">
-                        <div class="d-img">
-                            <img src="{% static 'images/cars/vw-polo.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <div class="d-info">
-                            <div class="d-text">
-                                <h4>VW Polo</h4>
-                                <div class="d-item_like">
-                                    <i class="fa fa-heart"></i><span>79</span>
-                                </div>
-                                <div class="d-atr-group">
-                                    <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                    <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Hatchback</span>
-                                </div>
-                                <div class="d-price">
-                                    Daily rate from <span>$106</span>
-                                    <a class="btn-main" href="car-single.html">Rent Now</a>
+                    <div class="col-lg-12">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{% static 'images/cars/vw-polo.jpg' %}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>VW Polo</h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>79</span>
+                                    </div>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}"
+                                                alt="">Hatchback</span>
+                                    </div>
+                                    <div class="d-price">
+                                        Daily rate from <span>$106</span>
+                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 offset-lg-1">
-        <h2 class="s2">Call us for further information. Rentaly customer care is here to help you anytime.</h2>
-      </div>
-
-      <div class="col-lg-5 text-lg-center text-sm-center">
-        <div class="phone-num-big">
-          <i class="fa fa-phone"></i>
-          <span class="pnb-text">
-            Call Us Now
-          </span>
-          <span class="pnb-num">
-            1 200 333 800
-          </span>
-        </div>
-        <a href="#" class="btn-main">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section aria-label="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 offset-lg-3 text-center">
-                <h2>Features Hilight</h2>
-                <div class="spacer-20"></div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="col-lg-3">
-                <div class="box-icon s2 p-small mb20 wow fadeInRight" data-wow-delay=".5s">
-                    <i class="fa bg-color fa-trophy"></i>
-                    <div class="d-inner">
-                        <h4>First class services</h4>
-                        Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
-                    </div>
+    <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-1">
+                    <h2 class="s2">Call us for further information. Rentaly customer care is here to help you anytime.
+                    </h2>
                 </div>
-                <div class="box-icon s2 p-small mb20 wow fadeInL fadeInRight" data-wow-delay=".75s">
-                    <i class="fa bg-color fa-road"></i>
-                    <div class="d-inner">
-                        <h4>24/7 road assistance</h4>
-                         Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-6">
-                <img src="{% static 'images/misc/car.png' %}" alt="" class="img-fluid wow fadeInUp">
-            </div>
-
-            <div class="col-lg-3">
-                <div class="box-icon s2 d-invert p-small mb20 wow fadeInL fadeInLeft" data-wow-delay="1s">
-                    <i class="fa bg-color fa-tag"></i>
-                    <div class="d-inner">
-                        <h4>Quality at Minimum Expense</h4>
-                         Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
+                <div class="col-lg-5 text-lg-center text-sm-center">
+                    <div class="phone-num-big">
+                        <i class="fa fa-phone"></i>
+                        <span class="pnb-text">
+                            Call Us Now
+                        </span>
+                        <span class="pnb-num">
+                            1 200 333 800
+                        </span>
                     </div>
-                </div>
-                <div class="box-icon s2 d-invert p-small mb20 wow fadeInL fadeInLeft" data-wow-delay="1.25s">
-                    <i class="fa bg-color fa-map-pin"></i>
-                    <div class="d-inner">
-                        <h4>Free Pick-Up & Drop-Off</h4>
-                         Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
-                    </div>
+                    <a href="#" class="btn-main">Contact Us</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section aria-label="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3 text-center">
+                    <h2>Features Hilight</h2>
+                    <div class="spacer-20"></div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-3">
+                    <div class="box-icon s2 p-small mb20 wow fadeInRight" data-wow-delay=".5s">
+                        <i class="fa bg-color fa-trophy"></i>
+                        <div class="d-inner">
+                            <h4>First class services</h4>
+                            Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
+                        </div>
+                    </div>
+                    <div class="box-icon s2 p-small mb20 wow fadeInL fadeInRight" data-wow-delay=".75s">
+                        <i class="fa bg-color fa-road"></i>
+                        <div class="d-inner">
+                            <h4>24/7 road assistance</h4>
+                            Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="{% static 'images/misc/car.png' %}" alt="" class="img-fluid wow fadeInUp">
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="box-icon s2 d-invert p-small mb20 wow fadeInL fadeInLeft" data-wow-delay="1s">
+                        <i class="fa bg-color fa-tag"></i>
+                        <div class="d-inner">
+                            <h4>Quality at Minimum Expense</h4>
+                            Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
+                        </div>
+                    </div>
+                    <div class="box-icon s2 d-invert p-small mb20 wow fadeInL fadeInLeft" data-wow-delay="1.25s">
+                        <i class="fa bg-color fa-map-pin"></i>
+                        <div class="d-inner">
+                            <h4>Free Pick-Up & Drop-Off</h4>
+                            Est dolore ut laboris eu enim eu veniam nostrud esse laborum duis consequat nostrud id
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -344,3 +404,46 @@
 </div>
 <!-- content close -->
 {% endblock %}
+
+
+{% block script %}
+<script>
+    (function ($) {
+        'use strict';
+        let owl = jQuery("#items-carousel-hero").owlCarousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            center: false,
+            items: 1,
+            rewind: true,
+            margin: 25,
+            nav: true,
+            thumbs: false,
+            navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+            dots: false,
+            autoplayTimeout: 6000, // Set the slide time to 5 seconds (5000 milliseconds)
+            autoplaySpeed: 1000, // Set the slide transition time to 3 seconds (3000 milliseconds)
+
+        });
+
+        owl.on('change.owl.carousel', function (event) {
+            var el = event.target;
+            $('h1', el).addClass('fadeInRight animated delay-2')
+                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $('h1', el).removeClass('fadeInRight animated delay-2');
+                });
+
+            $('img', el).addClass('fadeInLeft animated delay-2')
+                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $('img', el).removeClass('fadeInLeft animated delay-2');
+                });
+        });
+
+
+    })(jQuery);
+
+</script>
+
+
+{% endblock script %}
