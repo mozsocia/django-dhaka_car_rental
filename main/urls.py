@@ -3,7 +3,11 @@ from .views import *
 
 urlpatterns = [
     path('', home, name='home'),
-    path('about/', about, name='about')
+    path('about/', about, name='about'),
+    path('service/', service, name='service'),
+    path('test/', test, name='test'),
+    
+    
     # path('services/', service_list, name='service_list'),
     
     # path('slider/', views.slider_list, name='slider_list'),

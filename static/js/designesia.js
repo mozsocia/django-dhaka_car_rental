@@ -264,7 +264,7 @@
      function load_owl() {
         jQuery("#items-carousel").owlCarousel({
             center: false,
-            items:3,
+            items:1,
             rewind:true,
             margin:25,
             nav:true,
