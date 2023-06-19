@@ -1,0 +1,122 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block style %}
+
+{% endblock style %}
+
+{% block content %}
+
+
+<!-- content begin -->
+<div class="no-bottom no-top zebra" id="content">
+    <div id="top"></div>
+
+
+    <!--subheader section begin -->
+    <section id="subheader" class="jarallax text-light">
+        <img src="{% static 'images/background/subheader.jpg' %}" class="jarallax-img" alt="">
+        <div class="center-y relative text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Pick up</h1>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subheader section close -->
+
+
+    <section aria-label="section">
+        <div class="container">
+            <div id="gallery" class="row">
+
+                <div class="col-md-4 mb30 item">
+                    <div class="de-image-hover rounded">
+                        <a href="{% static 'images/gallery/1.jpg' %}" class="image-popup">								
+                            <span class="dih-title-wrap">
+                                <span class="dih-title">Lawachara National Park</span>
+                            </span>
+                            <span class="dih-overlay"></span>
+                            <img src="{% static 'images/gallery/1.jpg' %}" class="lazy img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb30 item">
+                    <div class="de-image-hover rounded">
+                        <a href="{% static 'images/gallery/2.jpg' %}" class="image-popup">								
+                            <span class="dih-title-wrap">
+                                <span class="dih-title">Ham Ham Waterfall</span>
+                            </span>
+                            <span class="dih-overlay"></span>
+                            <img src="{% static 'images/gallery/2.jpg' %}" class="lazy img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb30 item">
+                    <div class="de-image-hover rounded">
+                        <a href="{% static 'images/gallery/3.jpg' %}" class="image-popup">								
+                            <span class="dih-title-wrap">
+                                <span class="dih-title">Madhabpur Lake</span>
+                            </span>
+                            <span class="dih-overlay"></span>
+                            <img src="{% static 'images/gallery/3.jpg' %}" class="lazy img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb30 item">
+                    <div class="de-image-hover rounded">
+                        <a href="{% static 'images/gallery/4.jpg' %}" class="image-popup">								
+                            <span class="dih-title-wrap">
+                                <span class="dih-title">Explore Old Dhaka</span>
+                            </span>
+                            <span class="dih-overlay"></span>
+                            <img src="{% static 'images/gallery/4.jpg' %}" class="lazy img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb30 item">
+                    <div class="de-image-hover rounded">
+                        <a href="{% static 'images/gallery/5.jpg' %}" class="image-popup">								
+                            <span class="dih-title-wrap">
+                                <span class="dih-title">Moinot Ghat</span>
+                            </span>
+                            <span class="dih-overlay"></span>
+                            <img src="{% static 'images/gallery/5.jpg' %}" class="lazy img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb30 item">
+                    <div class="de-image-hover rounded">
+                        <a href="{% static 'images/gallery/6.jpg' %}" class="image-popup">								
+                            <span class="dih-title-wrap">
+                                <span class="dih-title">Baliati Jamidar Bari</span>
+                            </span>
+                            <span class="dih-overlay"></span>
+                            <img src="{% static 'images/gallery/6.jpg' %}" class="lazy img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+            
+    </section>
+    
+
+
+
+
+</div>
+<!-- content close -->
+{% endblock %}

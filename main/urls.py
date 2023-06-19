@@ -3,9 +3,15 @@ from .views import *
 
 urlpatterns = [
     path('', home, name='home'),
+    path('test/', test, name='test'),
     path('about/', about, name='about'),
     path('service/', service, name='service'),
-    path('test/', test, name='test'),
+    path('contact/', contact, name='contact'),
+    path('pricing/',pricing, name='princing'),
+    path('pickup/', pickup, name='pickup'),
+    path('information/', information, name='information'),
+    path('package/', package, name='package'),
+    
     
     
     # path('services/', service_list, name='service_list'),

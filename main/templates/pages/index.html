@@ -34,27 +34,7 @@
         data-bgimage="url({% static 'images/background/7.jpg' %}) bottom">
 
         <div id="items-carousel-hero" class="owl-carousel ">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="spacer-double sm-hide"></div>
-                    <div class="col-lg-6">
-                        <h4><span class="id-color">Plan your trip now</span></h4>
-                        <div class="spacer-10"></div>
-                        <h1>Explore the world with comfortable car</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
-
-                        <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
-                            href="#">Get the
-                            App</a>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <img src="{% static 'images/misc/car-2.png' %}" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            </div>
+            
 
             <div class="container">
                 <div class="row align-items-center">
@@ -65,10 +45,11 @@
                         <h1>Explore the world with comfortable car</h1>
                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.</p>
-
-                        <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
-                            href="#">Get the
-                            App</a>
+                        <div class="hero-btn">
+                            <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
+                                href="#">Get the
+                                App</a>
+                        </div>
                     </div>
 
                     <div class="col-lg-6">
@@ -87,14 +68,39 @@
                         <h1>Explore the world with comfortable car</h1>
                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.</p>
-
-                        <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
-                            href="#">Get the
-                            App</a>
+                        <div class="hero-btn">
+                            <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
+                                href="#">Get the
+                                App</a>
+                        </div>
                     </div>
 
                     <div class="col-lg-6">
                         <img src="{% static 'images/misc/car-4.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="spacer-double sm-hide"></div>
+                    <div class="col-lg-6">
+                        <h4><span class="id-color">Plan your trip now</span></h4>
+                        <div class="spacer-10"></div>
+                        <h1>Explore the world with comfortable car</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="hero-btn">
+                            <a class="btn-main" href="#">Order a Car</a>&nbsp;&nbsp;&nbsp;<a class="btn-main btn-black"
+                                href="#">Get the
+                                App</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="{% static 'images/misc/car-2.png' %}" class="img-fluid" alt="">
                     </div>
 
                 </div>
@@ -414,7 +420,7 @@
             loop: true,
             margin: 10,
             autoplay: true,
-            center: false,
+            center: true,
             items: 1,
             rewind: true,
             margin: 25,
@@ -439,9 +445,14 @@
                     $('h4', el).removeClass('slideInRight animated delay-2');
                 });
 
-            $('img', el).addClass('fadeInRight animated delay-2')
+            $('img', el).addClass('fadeInRight animated delay-1')
                 .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                    $('img', el).removeClass('fadeInRight animated delay-2');
+                    $('img', el).removeClass('fadeInRight animated delay-1');
+                });
+
+            $('.hero-btn', el).addClass('rotateIn animated delay-1')
+                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $('.hero-btn', el).removeClass('rotateIn animated delay-1');
                 });
         });
 

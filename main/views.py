@@ -2,16 +2,31 @@ from django.shortcuts import render
 from .models import *
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'pages/index.html')
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'pages/about.html')
 
 def service(request):
-    return render(request, 'service.html')
+    return render(request, 'pages/service.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
+
+def pricing(request):
+    return render(request, 'pages/pricing.html')
+
+def pickup(request):
+    return render(request, 'pages/pickup.html')
+
+def information(request):
+    return render(request, 'pages/information.html')
+
+def package(request):
+    return render(request, 'pages/package.html')
 
 def test(request):
-    return render(request, 'test.html')
+    return render(request, 'pages/test.html')
 
 # def service_list(request):
 #     services = Service.objects.all()
