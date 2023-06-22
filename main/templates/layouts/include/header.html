@@ -96,13 +96,14 @@
                                 </li>
                                 <li><a class="menu-item" href="/information/">Information</a>
                                     <ul>
-                                        <li><a class="menu-item">Our Cars</a></li>
-                                        <li><a class="menu-item">Our Clients</a></li>
-                                        <li><a class="menu-item">City Distance</a></li>
-                                        <li><a class="menu-item">Terms &amp; Condition</a></li>
-                                        <li><a class="menu-item">Privacy Policy</a></li>
-                                        <li><a class="menu-item">FAQs</a></li>
+                                        <li><a class="menu-item" href="{% url 'our-cars' %}">Our Cars</a></li>
+                                        <li><a class="menu-item" href="{% url 'our-clients' %}">Our Clients</a></li>
+                                        <li><a class="menu-item" href="{% url 'city-distance' %}">City Distance</a></li>
+                                        <li><a class="menu-item" href="{% url 'terms-conditions' %}">Terms &amp; Condition</a></li>
+                                        <li><a class="menu-item" href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+                                        <li><a class="menu-item" href="{% url 'faqs' %}">FAQs</a></li>
                                     </ul>
+                                    
                                 </li>
                                 <li><a class="menu-item" href="/contact/">Contact Us</a>
                                 </li>

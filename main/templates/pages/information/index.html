@@ -1,0 +1,89 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block style %}
+
+{% endblock style %}
+
+{% block content %}
+
+
+<!-- content begin -->
+<div class="no-bottom no-top zebra" id="content">
+    <div id="top"></div>
+
+
+    <!--subheader section begin -->
+    <section id="subheader" class="jarallax text-light">
+        <img src="{% static 'images/background/subheader.jpg' %}" class="jarallax-img" alt="">
+        <div class="center-y relative text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Information</h1>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subheader section close -->
+
+
+    <section id="section-hero" aria-label="section" class="jarallax text-light">
+        <img src="{% static 'images/background/4.jpg' %}" class="jarallax-img" alt="">
+        <div class="spacer-single sm-hide"></div>
+         <div class="spacer-double sm-hide"></div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="de-images">
+                            <img class="di-small-2" src="{% static 'images/misc/e2.jpg' %}" alt="">
+                            <img class="di-big img-fluid" src="{% static 'images/misc/e1.jpg' %}" alt="">
+                        </div>
+                </div>
+
+                <div class="col-lg-5 offset-lg-1">
+                    <h5>We Are Rentaly</h5>
+                    <div class="spacer-10"></div>
+                    <h1>We are the <span class="id-color">largest</span> leading commercial and luxury cars rental.</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a class="btn-main" href="#">Choose a Car</a>
+                    <div class="spacer-single"></div>
+
+                    <div class="row">
+                        <div class="col-lg-4 wow fadeInRight mb30" data-wow-delay="1.1s">
+                            <div class="de_count transparent text-left">
+                                <h3><span>150</span>+</h3>
+                                <h5 class="id-color">Cars<br>Available</h5>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 wow fadeInRight mb30" data-wow-delay="1.4s">
+                            <div class="de_count transparent text-left">
+                                <h3><span>48</span>k</h3>
+                                <h5 class="id-color">Happy<br>Customers</h5>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 wow fadeInRight mb30" data-wow-delay="1.7s">
+                            <div class="de_count transparent text-left">
+                                <h3><span>15</span></h3>
+                                <h5 class="id-color">Year<br>Experiences</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+</div>
+<!-- content close -->
+{% endblock %}

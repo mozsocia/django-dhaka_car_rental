@@ -18758,6 +18758,10 @@ img {
     box-shadow: 3px 3px 9px rgba(var(--primary-color-rgb), 0.6);
 }
 
+#items-carousel-hero .hero-slider-left {
+    margin-top: -124px;
+}
+
 /* #items-carousel-hero h1 {
     color: white;
 }

@@ -19,14 +19,43 @@ def pricing(request):
 def pickup(request):
     return render(request, 'pages/pickup.html')
 
-def information(request):
-    return render(request, 'pages/information.html')
+
 
 def package(request):
     return render(request, 'pages/package.html')
 
 def test(request):
     return render(request, 'pages/test.html')
+
+
+# ----------------------------------------------------------------
+# information pages
+def information(request):
+    return render(request, 'pages/information/index.html')
+
+def our_cars_view(request):
+    # Add your logic here
+    return render(request, 'pages/information/our_cars.html')
+
+def our_clients_view(request):
+    # Add your logic here
+    return render(request, 'pages/information/our_clients.html')
+
+def city_distance_view(request):
+    # Add your logic here
+    return render(request, 'pages/information/city_distance.html')
+
+def terms_conditions_view(request):
+    # Add your logic here
+    return render(request, 'pages/information/terms_conditions.html')
+
+def privacy_policy_view(request):
+    # Add your logic here
+    return render(request, 'pages/information/privacy_policy.html')
+
+def faqs_view(request):
+    # Add your logic here
+    return render(request, 'pages/information/faqs.html')
 
 # def service_list(request):
 #     services = Service.objects.all()
