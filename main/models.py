@@ -40,3 +40,33 @@ class Director(models.Model):
 
     def __str__(self):
         return self.name        
+
+
+class Service(models.Model):
+    image = models.ImageField(upload_to='services')
+    title = models.CharField(max_length=100)
+    car_type = models.CharField(max_length=100)
+    body = models.TextField()
+    time = models.CharField(max_length=100)
+    service_name = models.CharField(max_length=100)
+    description = models.TextField()        
+
+    def __str__(self):
+        return self.title 
+
+
+class Package_title(models.Model):
+    location = models.CharField(max_length=100)
+    description = models.TextField()
+    sub_menu_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.sub_menu_name 
+
+class Package_car(models.Model):
+    image = models.ImageField(upload_to='package_cars/')
+    car_name_or_model = models.CharField(max_length=100)
+    distance = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.car_name_or_model                  

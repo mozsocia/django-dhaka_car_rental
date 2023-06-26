@@ -1,7 +1,14 @@
-# from django import forms
-# from .models import *
+from django import forms
+from main.models import *
 
-# class CompanyForm(forms.ModelForm):
+
+
+# class SliderForm(forms.ModelForm):
 #     class Meta:
-#         model = CompanyDetails
+#         model = Slider
 #         fields = '__all__'
+
+class CompanyForm(forms.ModelForm):
+    class Meta:
+        model = CompanyDetails
+        fields = '__all__'
