@@ -1,5 +1,5 @@
  /* --------------------------------------------------
-  * Â© Copyright 2023 - dhaka by Universesoft. All rights reserved
+  * Â© Copyright 2023 - Rentaly by Designesia
   * --------------------------------------------------*/
 (function($) {
     'use strict';
@@ -264,7 +264,7 @@
      function load_owl() {
         jQuery("#items-carousel").owlCarousel({
             center: false,
-            items:1,
+            items:3,
             rewind:true,
             margin:25,
             nav:true,

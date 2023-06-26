@@ -1,59 +1,78 @@
 {% load static %}
 
 <!-- header begin -->
-       <header class="transparent header-light scroll-light has-topbar" style="border-bottom: 2px solid #78ca5c;">
-        <div id="topbar" class="topbar-dark text-light">
-            <div class="container">
-                <div class="topbar-left xs-hide">
-                    <div class="topbar-widget">
-                        <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+208 333 9296</a></div>
-                        <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@dhakacarrental.com</a></div>
-                        <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
+<header class="transparent header-light scroll-light has-topbar" style="border-bottom: 2px solid #78ca5c;">
+    <div id="topbar" class="topbar-dark text-light">
+        <div class="container">
+            <div class="topbar-left xs-hide">
+                <div class="topbar-widget">
+                    <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+208 333 9296</a></div>
+                    <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@dhakacarrental.com</a>
+                    </div>
+                    <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a>
                     </div>
                 </div>
-            
-                <div class="topbar-right">
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-                    </div>
-                </div>  
-                <div class="clearfix"></div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="de-flex sm-pt10">
-                        <div class="de-flex-col">
-                            <div class="de-flex-col">
-                                <!-- logo begin -->
-                                <div id="logo">
-                                    <a href="index.html">
-                                        <img class="logo-1" src="{% static 'images/logo-light.png' %}" alt="">
-                                        <img class="logo-2" src="{% static 'images/logo-main.png' %}" alt="" style="
-                                        width: 135px;">
-                                    </a>
-                                </div>
-                                <!-- logo close -->
-                            </div>
-                        </div>
-                        <div class="de-flex-col header-col-mid">
-                            <ul id="mainmenu">
-                                <li><a class="menu-item" href="/">Home</a>
-                       
-                                </li>
 
-                                <li><a class="menu-item" href="/service/">Services</a>
-                                    <ul>
-                                        <li><a class="menu-item" href="/service/?tab=v-pills-home-tab">Airport Transfer</a></li>
-                                        <li><a class="menu-item" href="/service/?tab=v-pills-profile-tab">Hourly Car Rental</a></li>
-                                        <li><a class="menu-item" href="/service/?tab=v-pills-messages-tab">Daily Basis Rent A Car - Inside Dhaka</a></li>
-                                        <li><a class="menu-item"  href="/service/?tab=v-pills-settings12-tab">Daily Basis Rent A Car - Outside Dhaka</a></li>
-                                        <!-- <li><a class="menu-item" href="#">Monthly Car Rental</a></li>
+           
+
+            <div class="topbar-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
+                    <!-- <a href="#"><i class="fa fa-pinterest fa-lg"></i></a> -->
+                    <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
+                </div>
+
+
+                
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="de-flex sm-pt10">
+                    <div class="de-flex-col">
+                        <div class="de-flex-col">
+                            <!-- logo begin -->
+                            <div id="logo">
+                                <a href="index.html">
+                                    <img class="logo-1" src="{% static 'images/logo-light.png' %}" alt="">
+                                    <img class="logo-2" src="{% static 'images/logo-main.png' %}" alt="" style="
+                                        width: 135px;">
+                                </a>
+                            </div>
+                            <!-- logo close -->
+                        </div>
+                    </div>
+                    <div class="de-flex-col header-col-mid">
+                        <ul id="mainmenu">
+                            <li class="li-pickup"><a class="menu-item btn-pickup " href="/pickup">Pick Up</a>
+                                <ul>
+                                    <li><a class="menu-item" href="#">Package one</a></li>
+                                    <li><a class="menu-item" href="#">Package two</a></li>
+                                    <li><a class="menu-item" href="#">Package three</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a class="menu-item" href="/">Home</a>
+
+                            </li>
+
+                            <li><a class="menu-item" href="/service/">Services</a>
+                                <ul>
+                                    <li><a class="menu-item" href="/service/?tab=v-pills-home-tab">Airport Transfer</a>
+                                    </li>
+                                    <li><a class="menu-item" href="/service/?tab=v-pills-profile-tab">Hourly Car
+                                            Rental</a></li>
+                                    <li><a class="menu-item" href="/service/?tab=v-pills-messages-tab">Daily Basis Rent
+                                            A Car - Inside Dhaka</a></li>
+                                    <li><a class="menu-item" href="/service/?tab=v-pills-settings12-tab">Daily Basis
+                                            Rent A Car - Outside Dhaka</a></li>
+                                    <!-- <li><a class="menu-item" href="#">Monthly Car Rental</a></li>
                                         <li><a class="menu-item" href="#">Office Pick &amp; Drop</a></li>
                                         <li><a class="menu-item" href="#">Inter District Pick&amp;Drop</a></li>
                                         <li><a class="menu-item" href="#">Rent A Car in Sylhet</a></li>
@@ -61,67 +80,76 @@
                                         <li><a class="menu-item" href="#">Rent A Car in Cox's Bazar</a></li>
                                         <li><a class="menu-item" href="#">Rent A Car in Sajek Khagrachari</a></li>
                                         <li><a class="menu-item" href="#">Tour Package</a></li> -->
-                                    </ul>
-                                    
-                                
-                                </li>
-                                <li><a class="menu-item" href="/pickup">Pick Up</a>
-                                   
-                                </li>
-
-                                <li><a class="menu-item" href="/pricing/">Pricing</a>
-                                    <ul>
-                                        <li><a class="menu-item">Hourly Car Rental</a></li>
-                                        <li><a class="menu-item">Daily Basis Rent A Car - Inside Dhaka</a></li>
-                                        <li><a class="menu-item">Daily Basis Rent A Car - Outside Dhaka</a></li>
-                                        <li><a class="menu-item">Monthly Car Rental</a></li>
-                                        <li><a class="menu-item">Office Pick &amp; Drop</a></li>
-                                        <li><a class="menu-item">Customized Payment</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a class="menu-item" href="/package/">Packages</a>
-                                    <ul>
-                                        <li><a class="menu-item">Airport Transfer</a></li>
-                                        <li><a class="menu-item">Inter District Pick&amp;Drop</a></li>
-                                        <li><a class="menu-item">Rent A Car in Sylhet</a></li>
-                                        <li><a class="menu-item">Rent A Car in Chittagong</a></li>
-                                        <li><a class="menu-item">Rent A Car in Cox's Bazar</a></li>
-                                        <li><a class="menu-item">Day Tour Nearby Dhaka</a></li>
-                                        <li><a class="menu-item">Rent A Car in Sajek Khagrachari</a></li>
-                                        <li><a class="menu-item">Tour Package</a></li>
-                                        <li><a class="menu-item">Flexible Hourly Packages</a></li>
-                                    </ul>
-                                </li>
-                                
-                                <li><a class="menu-item" href="/information/">Information</a>
-                                    <ul>
-                                        <li><a class="menu-item" href="{% url 'our-cars' %}">Our Cars</a></li>
-                                        <li><a class="menu-item" href="{% url 'our-clients' %}">Our Clients</a></li>
-                                        <li><a class="menu-item" href="{% url 'city-distance' %}">City Distance</a></li>
-                                        <li><a class="menu-item" href="{% url 'terms-conditions' %}">Terms &amp; Condition</a></li>
-                                        <li><a class="menu-item" href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
-                                        <li><a class="menu-item" href="{% url 'faqs' %}">FAQs</a></li>
-                                    </ul>
-                                    
-                                </li>
-                                <li><a class="menu-item" href="/about/">About Us</a>
-                                </li>
-                                <li><a class="menu-item" href="/contact/">Contact Us</a>
-                                </li>
+                                </ul>
 
 
-                            </ul>
-                        </div>
-                        <div class="de-flex-col">
-                            <div class="menu_side_area">
-                                <a href="login.html" class="btn-main">Call Us</a>
-                                <span id="menu-btn"></span>
-                            </div>
+                            </li>
+                            
+
+                            <li><a class="menu-item" href="/pricing/">Pricing</a>
+                                <ul>
+                                    <li><a class="menu-item">Hourly Car Rental</a></li>
+                                    <li><a class="menu-item">Daily Basis Rent A Car - Inside Dhaka</a></li>
+                                    <li><a class="menu-item">Daily Basis Rent A Car - Outside Dhaka</a></li>
+                                    <li><a class="menu-item">Monthly Car Rental</a></li>
+                                    <li><a class="menu-item">Office Pick &amp; Drop</a></li>
+                                    <li><a class="menu-item">Customized Payment</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a class="menu-item" href="/package/">Packages</a>
+                                <ul>
+                                    <li><a class="menu-item">Airport Transfer</a></li>
+                                    <li><a class="menu-item">Inter District Pick&amp;Drop</a></li>
+                                    <li><a class="menu-item">Rent A Car in Sylhet</a></li>
+                                    <li><a class="menu-item">Rent A Car in Chittagong</a></li>
+                                    <li><a class="menu-item">Rent A Car in Cox's Bazar</a></li>
+                                    <li><a class="menu-item">Day Tour Nearby Dhaka</a></li>
+                                    <li><a class="menu-item">Rent A Car in Sajek Khagrachari</a></li>
+                                    <li><a class="menu-item">Tour Package</a></li>
+                                    <li><a class="menu-item">Flexible Hourly Packages</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a class="menu-item" href="/information/">Information</a>
+                                <ul>
+                                    <li><a class="menu-item" href="{% url 'our-cars' %}">Our Cars</a></li>
+                                    <li><a class="menu-item" href="{% url 'our-clients' %}">Our Clients</a></li>
+                                    <li><a class="menu-item" href="{% url 'city-distance' %}">City Distance</a></li>
+                                    <li><a class="menu-item" href="{% url 'terms-conditions' %}">Terms &amp;
+                                            Condition</a></li>
+                                    <li><a class="menu-item" href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+                                    <li><a class="menu-item" href="{% url 'faqs' %}">FAQs</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a class="menu-item" href="/about/">About Us</a>
+                            </li>
+                            <li><a class="menu-item" href="/contact/">Contact Us</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="de-flex-col">
+                        <div class="menu_side_area">
+                            <!-- <a href="login.html" class="btn-main">Call Us</a> -->
+
+                            <div class="dropdown">
+                                <button class="btn btn-main dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Language
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Bangla</a></li>
+                                </ul>
+                            </div> 
+                            <span id="menu-btn"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- header close -->
+    </div>
+</header>
+<!-- header close -->

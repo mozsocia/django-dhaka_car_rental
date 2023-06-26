@@ -291,7 +291,7 @@ header.smaller {
 
 
 .scroll-down {
-    margin-top: -90px;
+    margin-top: 0px;
 }
 
 .scroll-up {
@@ -11318,7 +11318,7 @@ margin:5px;
 
 .widget {
     margin-bottom: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
 
 .widget h4 {
@@ -18761,6 +18761,71 @@ img {
 #items-carousel-hero .hero-slider-left {
     margin-top: -124px;
 }
+
+header > div.container {
+    max-width: 95% !important;
+}
+
+
+.btn-pickup {
+    padding: 4px!important;
+    color: #fff!important;
+}
+
+.li-pickup {
+    margin-top: 14px!important;
+
+    background: var(--primary-color);
+    padding: 4px 25px !important;
+
+    display: inline-block;
+    font-family: var(--title-font);
+    text-align: center;
+    color: #fff;
+    outline: 0;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 4px 30px 4px 30px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 20px 0px rgba(var(--primary-color-rgb), 0.5);
+    -moz-box-shadow: 2px 2px 20px 0px rgba(var(--primary-color-rgb), 0.5);
+    box-shadow: 2px 2px 20px 0px rgba(var(--primary-color-rgb), 0.5);
+}
+.li-pickup::after {
+    color: #fff!important;
+}
+
+#mainmenu>li>a {
+    text-transform: uppercase;
+}
+
+footer .pay-img {
+    width: 50px;
+}
+
+.directors.text-light .de_testi.type-2 blockquote {
+    color: #3F4254;;
+    background: var(--bg-color-odd);
+    border: none;
+    padding: 40px 40px 30px 40px;
+}
+
+.directors.text-light .de_testi.type-2 blockquote h4{
+    color: #3F4254;
+}
+
+#items-carousel-hero .hero-slider-left {
+    margin-top: 100px;
+}
+
+#items-carousel-hero .hero-slider-left .lead {
+    width: 80%;
+}
+
 
 /* #items-carousel-hero h1 {
     color: white;
