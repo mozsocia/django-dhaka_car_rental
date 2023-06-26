@@ -124,15 +124,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR/'static'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
-]
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 #media file configure
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+# EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = 'mail.tweenautoschool.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'tweenautoschool@tweenautoschool.com'
+# EMAIL_HOST_PASSWORD = 'tweenauto2023@'
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'tweenautoschool@tweenautoschool.com'
