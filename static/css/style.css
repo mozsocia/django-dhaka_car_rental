@@ -3974,7 +3974,7 @@ hr {
     padding: 8px;
     margin-bottom: 10px;
     border: none;
-    border: solid 2px #eeeeee;
+    border: solid 1px #aaa;
     background: rgba(0, 0, 0, .025);
     border-radius: 6px;
     -moz-border-radius: 6px;
@@ -18843,6 +18843,12 @@ footer .payment div span {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     box-shadow: 3px 3px 9px rgba(164, 164, 186, .5);
+}
+.topbar-right .btn-primary {
+    height: 29px;
+    padding: 5px 10px !important;
+    margin-left: 5px;
+    margin-top: 8px;
 }
 
 /* #items-carousel-hero h1 {

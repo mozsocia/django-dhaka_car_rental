@@ -59,3 +59,13 @@ def privacy_policy_view(request):
 def faqs_view(request):
     # Add your logic here
     return render(request, 'main/pages/information/faqs.html')
+
+
+def login(request):
+    # Add your logic here
+    return render(request, 'main/pages/login.html')
+
+def register(request):
+    # Add your logic here
+    return render(request, 'main/pages/register.html')
+
