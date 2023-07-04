@@ -6,15 +6,18 @@
             <div class="container">
                 <div class="topbar-left xs-hide">
                     <div class="topbar-widget">
-                        <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+208 333 9296</a></div>
-                        <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@dhakacarrental.com</a></div>
-                        <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
+                        <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+8801967-914140, +8801797-777201</a></div>
+                        <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>mirza.sumon1979@gmail.com</a></div>
+                        <!--<div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>-->
                     </div>
                 </div>
             
                 <div class="topbar-right">
                     <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                        
+                        <a href="https://www.facebook.com/dhaka.car.rental2015" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg></a>
                         <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
                         <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
                         <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
@@ -32,7 +35,7 @@
                             <div class="de-flex-col">
                                 <!-- logo begin -->
                                 <div id="logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img class="logo-1" src="{% static 'images/logo-light.png' %}" alt="">
                                         <img class="logo-2" src="{% static 'images/logo-main.png' %}" alt="" style="
                                         width: 135px;">
@@ -42,12 +45,22 @@
                             </div>
                         </div>
                         <div class="de-flex-col header-col-mid">
-                            <ul id="mainmenu">
-                                <li><a class="menu-item" href="/">Home</a>
+                            <ul id="mainmenu" style="padding: 0;">
+                                
+                                 <li class="li-pickup"><a class="menu-item btn-pickup " href="/pickup">PICK UP</a>
+                                    <ul>
+                                        <li><a class="menu-item" href="#">Package one</a></li>
+                                        <li><a class="menu-item" href="#">Package two</a></li>
+                                        <li><a class="menu-item" href="#">Package three</a></li>
+    
+                                    </ul>
+                                </li>
+                                    
+                                <li><a class="menu-item" href="/">HOME</a>
                        
                                 </li>
 
-                                <li><a class="menu-item" href="/service/">Services</a>
+                                <li><a class="menu-item" href="/service/">SERVICES</a>
                                     <ul>
                                         <li><a class="menu-item" href="/service/?tab=v-pills-home-tab">Airport Transfer</a></li>
                                         <li><a class="menu-item" href="/service/?tab=v-pills-profile-tab">Hourly Car Rental</a></li>
@@ -65,11 +78,9 @@
                                     
                                 
                                 </li>
-                                <li><a class="menu-item" href="/pickup">Pick Up</a>
-                                   
-                                </li>
+                                
 
-                                <li><a class="menu-item" href="/pricing/">Pricing</a>
+                                <li><a class="menu-item" href="/pricing/">PRICING</a>
                                     <ul>
                                         <li><a class="menu-item">Hourly Car Rental</a></li>
                                         <li><a class="menu-item">Daily Basis Rent A Car - Inside Dhaka</a></li>
@@ -80,7 +91,7 @@
                                     </ul>
                                 </li>
 
-                                <li><a class="menu-item" href="/package/">Packages</a>
+                                <li><a class="menu-item" href="/package/">PACKAGES</a>
                                     <ul>
                                         <li><a class="menu-item">Airport Transfer</a></li>
                                         <li><a class="menu-item">Inter District Pick&amp;Drop</a></li>
@@ -94,28 +105,47 @@
                                     </ul>
                                 </li>
                                 
-                                <li><a class="menu-item" href="/information/">Information</a>
+                                <li><a class="menu-item" href="/information/">INFORMATION</a>
                                     <ul>
                                         <li><a class="menu-item" href="{% url 'our-cars' %}">Our Cars</a></li>
                                         <li><a class="menu-item" href="{% url 'our-clients' %}">Our Clients</a></li>
-                                        <li><a class="menu-item" href="{% url 'city-distance' %}">City Distance</a></li>
+                                        <!--<li><a class="menu-item" href="{% url 'city-distance' %}">City Distance</a></li>-->
                                         <li><a class="menu-item" href="{% url 'terms-conditions' %}">Terms &amp; Condition</a></li>
                                         <li><a class="menu-item" href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
                                         <li><a class="menu-item" href="{% url 'faqs' %}">FAQs</a></li>
                                     </ul>
                                     
                                 </li>
-                                <li><a class="menu-item" href="/about/">About Us</a>
+                                <li><a class="menu-item" href="/about/">ABOUT US</a>
                                 </li>
-                                <li><a class="menu-item" href="/contact/">Contact Us</a>
+                                <li><a class="menu-item" href="/contact/">CONTACT US</a>
                                 </li>
+                                
+                                <!--<li><a class="menu-item" >Language</a>-->
+                                <!--    <ul>-->
+                                <!--        <li><a class="menu-item" >English</a></li>-->
+                                <!--        <li><a class="menu-item" >Bangla</a></li>-->
+                    
+                                <!--    </ul>-->
+
+                                <!-- </li>-->
 
 
                             </ul>
                         </div>
                         <div class="de-flex-col">
                             <div class="menu_side_area">
-                                <a href="login.html" class="btn-main">Call Us</a>
+                                <!--<a href="login.html" class="btn-main">Call Us</a>-->
+                                <div class="dropdown">
+                                <button class="btn btn-main dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="padding: 5px 10px;">
+                                    Language
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Bangla</a></li>
+                                </ul>
+                            </div> 
                                 <span id="menu-btn"></span>
                             </div>
                         </div>
