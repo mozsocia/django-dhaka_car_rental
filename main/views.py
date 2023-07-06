@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import *
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import authenticate, login
+from .decorators import *
+from .forms import *
+from .models import *
 
 
 
@@ -65,7 +69,62 @@ def login(request):
     # Add your logic here
     return render(request, 'main/pages/login.html')
 
+# def register(request):
+#     # Add your logic here
+#     return render(request, 'main/pages/register.html')
+
+
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+
+
+@guest_only
 def register(request):
-    # Add your logic here
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            full_name = form.cleaned_data['full_name']
+            age = form.cleaned_data['age']
+            phone = form.cleaned_data['phone']
+
+            # Create a new user
+            user = User.objects.create_user(username=username, password=password, email=email)
+
+            # Create a profile for the user
+            profile = Profile(user=user, full_name=full_name, age=age, phone=phone,)
+            profile.save()
+
+            # Redirect to login page or any other page after successful registration
+            return redirect('login')
+
+
     return render(request, 'main/pages/register.html')
+
+
+
+def login_user(request):
+    error = None
+
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            # Authenticate user
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                # User credentials are correct, log in the user
+                login(request, user)
+                # Redirect to a success page or any other page
+                return redirect('home')
+            else:
+                # Invalid credentials, show an error message
+                error = 'Invalid username or password.'
+
+    return render(request, 'main/pages/login.html', {'error': error})    
 

@@ -40,14 +40,14 @@
                     
                     <div class="spacer-10"></div>
                     
-                    <form name="contactForm" id='contact_form' class="form-border" method="post" action=''>
-
+                    <form name="contactForm" id='contact_form' class="form-border" method="POST" action="{% url 'register' %}">
+                        {% csrf_token %}
                         <div class="row">
 
                             <div class="col-md-6">
                                 <div class="field-set">
                                     <label>Name:</label>
-                                    <input type='text' name='name' id='name' class="form-control">
+                                    <input type='text' name='full_name' id='name' class="form-control">
                                 </div>
                             </div>
 
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <div class="field-set">
                                     <label>NID:</label>
                                     <input type='file' name='nid'  class="form-control">
@@ -99,7 +99,7 @@
                                     <label>Picture:</label>
                                     <input type='file' name='pic'  class="form-control">
                                 </div>
-                            </div>
+                            </div> -->
 
                             
 
