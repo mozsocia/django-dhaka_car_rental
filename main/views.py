@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from .decorators import *
 from .forms import *
 from .models import *
+from django.db import transaction
 from pprint import pprint
 
 
@@ -79,6 +80,7 @@ from django.shortcuts import render, redirect
 
 
 @guest_only
+@transaction.atomic
 def register(request):
     normal_error = {}
     form_error = None
@@ -98,7 +100,7 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password, email=email)
 
                 # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name, phone=phone)
+                profile = FrontProfile.objects.create(user=user, full_name=full_name)
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login')
