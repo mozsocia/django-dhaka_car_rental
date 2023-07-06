@@ -25,6 +25,7 @@ urlpatterns = [
     path('login_user/', login_user, name='login_user'),
     path('register/', register, name='register'),
     path('profile/', profile, name='profile'),
+    path('logout/', logout_user, name='logout'),
     # path('update_profile/', update_profile, name='update_profile'),
 
     

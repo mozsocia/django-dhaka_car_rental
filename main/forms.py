@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 class RegisterForm(forms.Form):
     username = forms.CharField(max_length=150)
     password = forms.CharField(widget=forms.PasswordInput)
-    re_password = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
     email = forms.EmailField()
     full_name = forms.CharField(max_length=255)
     phone = forms.IntegerField()
+
 
     def clean(self):
         cleaned_data = super().clean()

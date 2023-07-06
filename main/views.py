@@ -8,6 +8,8 @@ from .models import *
 from django.db import transaction
 from pprint import pprint
 
+from django.contrib.auth import logout
+
 
 def home(request):
     return render(request, 'main/pages/index.html')
@@ -93,7 +95,7 @@ def register(request):
     form_error = None
     
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = RegisterForm(request.POST, request.FILES)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
@@ -102,12 +104,15 @@ def register(request):
             phone = form.cleaned_data['phone']
 
 
+
             try:
                 # Create a new user
                 user = User.objects.create_user(username=username, password=password, email=email)
 
                 # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,)
+                profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,
+
+                                                      )
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login')
@@ -159,3 +164,10 @@ def login_user(request):
 
     return render(request, 'main/pages/login.html', {'form_error': form_error})    
 
+
+
+def logout_user(request):
+
+    logout(request)
+    
+    return redirect('home')  # Replace 'home' with the appropriate URL name
