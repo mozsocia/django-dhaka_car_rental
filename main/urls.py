@@ -22,8 +22,11 @@ urlpatterns = [
     
     
     path('package/', package, name='package'),
-    path('login/', login, name='login'),
+    path('login_user/', login_user, name='login_user'),
     path('register/', register, name='register'),
+    path('profile/', profile, name='profile'),
+    # path('update_profile/', update_profile, name='update_profile'),
+
     
 
     

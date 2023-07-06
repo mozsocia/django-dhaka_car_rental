@@ -66,13 +66,20 @@ def faqs_view(request):
     return render(request, 'main/pages/information/faqs.html')
 
 
-def login(request):
-    # Add your logic here
-    return render(request, 'main/pages/login.html')
 
-# def register(request):
+# def login(request):
 #     # Add your logic here
-#     return render(request, 'main/pages/register.html')
+#     return render(request, 'main/pages/login.html')
+
+def profile(request):
+    profile = FrontProfile.objects.all()
+    
+
+    context ={
+        'profile':profile
+    }
+
+    return render(request, 'main/pages/profile.html',context)
 
 
 from django.contrib.auth.models import User
@@ -100,7 +107,7 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password, email=email)
 
                 # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name)
+                profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,)
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login')
@@ -110,8 +117,8 @@ def register(request):
                     normal_error['username'] = "Username already in use"
                 
                     
-                pprint(str(e))
-                pprint(normal_error)
+                # pprint(str(e))
+                # pprint(normal_error)
                 # Handle the exception and display an error message
                 # messages.error(request, f"An error occurred: {str(e)}")
             
@@ -123,8 +130,9 @@ def register(request):
     return render(request, 'main/pages/register.html', {'form_error': form_error, 'normal_error': normal_error } )
 
 
-
-def login_user(request):
+@guest_only
+def login_user(request): 
+    form_error = None
     error = None
 
     if request.method == 'POST':
@@ -135,7 +143,7 @@ def login_user(request):
             password = form.cleaned_data['password']
             # Authenticate user
             user = authenticate(request, username=username, password=password)
-
+    
             if user is not None:
                 # User credentials are correct, log in the user
                 login(request, user)
@@ -145,5 +153,9 @@ def login_user(request):
                 # Invalid credentials, show an error message
                 error = 'Invalid username or password.'
 
-    return render(request, 'main/pages/login.html', {'error': error})    
+        else:
+            form_error = form.errors
+            # pprint(form_error)            
+
+    return render(request, 'main/pages/login.html', {'form_error': form_error})    
 

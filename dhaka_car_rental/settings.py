@@ -133,8 +133,6 @@ STATICFILES_DIRS = [
 ]
 
 
-
-
 #media file configure
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
