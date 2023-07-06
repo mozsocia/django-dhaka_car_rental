@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login
 from .decorators import *
 from .forms import *
 from .models import *
-
+from pprint import pprint
 
 
 def home(request):
@@ -80,6 +80,8 @@ from django.shortcuts import render, redirect
 
 @guest_only
 def register(request):
+    form_error = None
+    
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -94,14 +96,17 @@ def register(request):
             user = User.objects.create_user(username=username, password=password, email=email)
 
             # Create a profile for the user
-            profile = Profile(user=user, full_name=full_name, age=age, phone=phone,)
-            profile.save()
+            profile = FrontProfile.objects.create(user=user, full_name=full_name, age=age, phone=phone)
+            
 
             # Redirect to login page or any other page after successful registration
             return redirect('login')
+        else:
+            form_error = form.errors
+            pprint(form_error)
+            
 
-
-    return render(request, 'main/pages/register.html')
+    return render(request, 'main/pages/register.html', {'form_error': form_error} )
 
 
 
