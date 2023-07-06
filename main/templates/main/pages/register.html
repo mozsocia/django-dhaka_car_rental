@@ -40,6 +40,16 @@
                     
                     <div class="spacer-10"></div>
 
+                    {% if normal_error %}
+                    <ul class="errors">
+                        {% for key, value in normal_error.items %}
+                        
+                        <li>{{ key }}: {{ value }}</li>
+                        {% endfor %}
+                       
+                    </ul>
+                    {% endif %}
+
                     {% if form_error %}
                     <ul class="errors">
                         {% for field, field_errors in form_error.items %}

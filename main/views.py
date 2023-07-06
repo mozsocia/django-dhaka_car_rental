@@ -80,6 +80,7 @@ from django.shortcuts import render, redirect
 
 @guest_only
 def register(request):
+    normal_error = {}
     form_error = None
     
     if request.method == 'POST':
@@ -91,21 +92,33 @@ def register(request):
             full_name = form.cleaned_data['full_name']
             phone = form.cleaned_data['phone']
 
-            # Create a new user
-            user = User.objects.create_user(username=username, password=password, email=email)
 
-            # Create a profile for the user
-            profile = FrontProfile.objects.create(user=user, full_name=full_name, age=age, phone=phone)
+            try:
+                # Create a new user
+                user = User.objects.create_user(username=username, password=password, email=email)
+
+                # Create a profile for the user
+                profile = FrontProfile.objects.create(user=user, full_name=full_name, phone=phone)
+
+                # Redirect to login page or any other page after successful registration
+                return redirect('login')
             
-
-            # Redirect to login page or any other page after successful registration
-            return redirect('login')
+            except Exception as e:
+                if 'UNIQUE constraint failed: auth_user.username' in str(e):
+                    normal_error['username'] = "Username already in use"
+                
+                    
+                pprint(str(e))
+                pprint(normal_error)
+                # Handle the exception and display an error message
+                # messages.error(request, f"An error occurred: {str(e)}")
+            
         else:
             form_error = form.errors
             pprint(form_error)
             
 
-    return render(request, 'main/pages/register.html', {'form_error': form_error} )
+    return render(request, 'main/pages/register.html', {'form_error': form_error, 'normal_error': normal_error } )
 
 
 
