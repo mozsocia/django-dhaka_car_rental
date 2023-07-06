@@ -89,7 +89,6 @@ def register(request):
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
             full_name = form.cleaned_data['full_name']
-            age = form.cleaned_data['age']
             phone = form.cleaned_data['phone']
 
             # Create a new user
