@@ -16,5 +16,15 @@ urlpatterns = [
     path('company_detail/<int:pk>', views.company_detail, name='detail'),
     path('update/<int:pk>/update', views.company_update, name='update'),
     path('delete/<int:pk>', views.company_delete, name='delete'),
+    
+    
+    
+    # 
+    # test page
+    
+    path('test/list/', test_list, name='test_list'),
+    
+    
+    
 
 ]
