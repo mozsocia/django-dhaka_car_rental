@@ -12,3 +12,8 @@ class CompanyForm(forms.ModelForm):
     class Meta:
         model = CompanyDetails
         fields = '__all__'
+
+class AboutUsForm(forms.ModelForm):
+    class Meta:
+        model = AboutUs
+        fields = '__all__'

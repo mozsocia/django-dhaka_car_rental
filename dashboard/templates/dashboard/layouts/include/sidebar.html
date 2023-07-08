@@ -23,15 +23,12 @@
                             </g>
                         </svg>
                 </div>	
-                    <span class="nav-text">Charts</span>
+                    <span class="nav-text">Slider</span>
                 </a>
                 <ul >
-                    <li><a href="./chart-flot.html">Flot</a></li>
-                    <li><a href="./chart-morris.html">Morris</a></li>
-                    <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                    <li><a href="./chart-chartist.html">Chartist</a></li>
-                    <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                    <li><a href="./chart-peity.html">Peity</a></li>
+                    <li><a href="#">List</a></li>
+                    <li><a href="#">Create</a></li>
+                    
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" >
@@ -44,36 +41,12 @@
                         </g>
                     </svg>
                 </div>
-                    <span class="nav-text">Bootstrap</span>
+                    <span class="nav-text">Company Details</span>
                 </a>
                 <ul >
-                    <li><a href="./ui-accordion.html">Accordion</a></li>
-                    <li><a href="./ui-alert.html">Alert</a></li>
-                    <li><a href="./ui-badge.html">Badge</a></li>
-                    <li><a href="./ui-button.html">Button</a></li>
-                    <li><a href="./ui-modal.html">Modal</a></li>
-                    <li class="extra-menu-li">		
-                        <ul id="collapseExample" class="pt-0 extra-menu-links extra-menu-area">
-                          <li><a href="./ui-button-group.html">Button Group</a></li>
-                            <li><a href="./ui-list-group.html">List Group</a></li>
-                            <li><a href="./ui-card.html">Cards</a></li>
-                            <li><a href="./ui-carousel.html">Carousel</a></li>
-                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
-                            <li><a href="./ui-popover.html">Popover</a></li>
-                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="./ui-tab.html">Tab</a></li>
-                            <li><a href="./ui-typography.html">Typography</a></li>
-                            <li><a href="./ui-pagination.html">Pagination</a></li>
-                            <li><a href="./ui-grid.html">Grid</a></li>
-                        </ul>
-                        <a class="btn show-more-btn border-0" data-bs-toggle="collapse" href="#collapseExample" role="button"  aria-controls="collapseExample">
-                            <span class="show-more">Show More + </span>
-                            <span class="show-less">Show Less - </span>
-                        </a>
-                    </li>  
+                    <li><a href="{% url 'company_detail_list' %}">List</a></li>
+                    <li><a href="{% url 'company_detail_create' %}">Create</a></li>
                     
-                    
-
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" >
@@ -87,16 +60,12 @@
                             </g>
                     </svg>
                 </div>	
-                    <span class="nav-text">Plugins</span>
+                    <span class="nav-text">About Us</span>
                 </a>
                 <ul >
-                    <li><a href="./uc-select2.html">Select 2</a></li>
-                    <li><a href="./uc-nestable.html">Nestable</a></li>
-                    <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
-                    <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
-                    <li><a href="./uc-toastr.html">Toastr</a></li>
-                    <li><a href="./map-jqvmap.html">Jqv Map</a></li>
-                    <li><a href="./uc-lightgallery.html">Light Gallery</a></li>
+                    <li><a href="{% url 'about_us_list' %}">List</a></li>
+                    <li><a href="{% url 'about_us_create' %}">Create</a></li>
+                    
                 </ul>
             </li>
             <li><a href="widget-basic.html" class="" >

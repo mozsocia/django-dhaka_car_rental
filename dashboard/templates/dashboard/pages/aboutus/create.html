@@ -4,7 +4,7 @@
 {% load static %}
 
 {% block content %}
-<form method="POST" action="{% url 'company_create' %}">
+<form method="POST" >
     {% csrf_token %}
     {{ form }}
     <button type="submit">Create</button>

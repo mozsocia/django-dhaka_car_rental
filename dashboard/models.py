@@ -26,7 +26,7 @@ class AboutUs(models.Model):
     counter_number = models.IntegerField()
 
     def __str__(self):
-        return self.title
+        return self.about_title
 
 
 class Director(models.Model):
