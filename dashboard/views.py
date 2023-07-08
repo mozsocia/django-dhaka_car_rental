@@ -9,7 +9,14 @@ from .forms import *
 def dashboard(request):
     return render(request, 'dashboard/pages/dashboard.html')
 
-# # slider
+
+
+
+def test_list(request):
+    return render(request, 'dashboard/pages/test_list.html')
+
+# slider
+
 
 # def slider_list(request):
 #     sliders = Slider.objects.all()

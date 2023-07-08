@@ -12,11 +12,17 @@ urlpatterns = [
     # path('update/<int:pk>/',slider_update, name='update'),
     # path('delete/<int:pk>/',slider_delete, name='delete'),
 
+
     # company_detail
     path('company_detail_list/', company_detail_list, name='company_detail_list'),
     path('company_detail_create/',company_detail_create, name='company_detail_create'),
     path('company_detail_update/<int:pk>/', company_detail_update, name='company_detail_update'),
     path('company_detail_delete/<int:pk>', company_detail_delete, name='company_detail_delete'),
+
+    
+    path('test/list/', test_list, name='test_list'),
+    
+    
 
     # about us
     path('about_us_list', about_us_list, name='about_us_list'),
