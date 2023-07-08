@@ -60,7 +60,7 @@
                     </ul>
                     {% endif %}
                     
-                    <form name="contactForm" id='contact_form' class="form-border" method="POST" action="{% url 'register' %}">
+                    <form name="contactForm" id='contact_form' enctype="multipart/form-data" class="form-border" method="POST" action="{% url 'register' %}">
                         {% csrf_token %}
                         <div class="row">
 
@@ -106,7 +106,7 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="col-md-6">
+                            <div class="col-md-6">
                                 <div class="field-set">
                                     <label>NID:</label>
                                     <input type='file' name='nid_image'  class="form-control">
@@ -119,7 +119,7 @@
                                     <label>Picture:</label>
                                     <input type='file' name='profile_image'  class="form-control">
                                 </div>
-                            </div> -->
+                            </div> 
 
                             
 

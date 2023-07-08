@@ -9,6 +9,9 @@ class RegisterForm(forms.Form):
     email = forms.EmailField()
     full_name = forms.CharField(max_length=255)
     phone = forms.IntegerField()
+    
+    nid_image = forms.ImageField()
+    profile_image = forms.ImageField()
 
 
     def clean(self):

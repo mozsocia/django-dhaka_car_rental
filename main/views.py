@@ -102,6 +102,9 @@ def register(request):
             email = form.cleaned_data['email']
             full_name = form.cleaned_data['full_name']
             phone = form.cleaned_data['phone']
+            
+            nid_image = form.cleaned_data['nid_image']
+            profile_image = form.cleaned_data['profile_image']
 
 
 
@@ -110,9 +113,7 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password, email=email)
 
                 # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,
-
-                                                      )
+                profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,nid_image=nid_image, profile_image=profile_image )
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login')
