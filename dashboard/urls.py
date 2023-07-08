@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('admin/', dashboard, name='dashboard'),
+    path('admin/dashboard/', dashboard, name='dashboard'),
 
     # slider
     # path('rrr', views.slider_list, name='list'),
