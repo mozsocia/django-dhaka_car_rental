@@ -34,7 +34,8 @@ def pickup(request):
 
 
 def package(request):
-    return render(request, 'main/pages/package.html')
+    package = Package_car.objects.all()
+    return render(request, 'main/pages/package.html',{'package': package})
 
 def test(request):
     return render(request, 'main/pages/test.html')

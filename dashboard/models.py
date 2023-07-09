@@ -60,16 +60,36 @@ class Package_title(models.Model):
     description = models.TextField()
     sub_menu_name = models.CharField(max_length=50)
 
+    
+
     def __str__(self):
         return self.sub_menu_name 
 
 class Package_car(models.Model):
-    image = models.ImageField(upload_to='package_cars/')
-    car_name_or_model = models.CharField(max_length=100)
-    distance = models.PositiveIntegerField()
+    title = models.CharField(max_length=100)
+    caption = models.CharField(max_length=100)
+    car_name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='car_images/')
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+    Car_Seats = models.DecimalField(max_digits=8, decimal_places=2)
+    car_type = models.CharField(max_length=100)
+
+    MENU_CHOICES = [
+        ('airport_transfer', 'Airport Transfer'),
+        ('inter_district_pick_drop', 'Inter District Pick&Drop'),
+        ('rent_car_sylhet', 'Rent A Car in Sylhet'),
+        ('rent_car_chittagong', 'Rent A Car in Chittagong'),
+        ('rent_car_cox_bazar', "Rent A Car in Cox's Bazar"),
+        ('day_tour_dhaka', 'Day Tour Nearby Dhaka'),
+        ('rent_car_sajek_khagrachari', 'Rent A Car in Sajek Khagrachari'),
+        ('tour_package', 'Tour Package'),
+        ('hourly_packages', 'Flexible Hourly Packages'),
+    ]
+    menu = models.CharField(max_length=255, choices=MENU_CHOICES)
 
     def __str__(self):
-        return self.car_name_or_model      
+        return self.car_name      
 
 class Pricing(models.Model):
     title = models.CharField(max_length=100)
@@ -78,8 +98,8 @@ class Pricing(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    Car_Seats = models.DecimalField(max_digits=8, decimal_places=2,blank=True,null=True)
-    car_type = models.CharField(max_length=100,blank=True,null=True)
+    Car_Seats = models.DecimalField(max_digits=8, decimal_places=2)
+    car_type = models.CharField(max_length=100)
 
 
 
@@ -91,3 +111,6 @@ class Pricing(models.Model):
         ('pick_drop', 'Office Pick & Drop'),
     )
     menu = models.CharField(max_length=255, choices=menu_choices)    
+
+    def __str__(self):
+            return self.car_name  
