@@ -116,7 +116,7 @@ def register(request):
                 profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,nid_image=nid_image, profile_image=profile_image )
 
                 # Redirect to login page or any other page after successful registration
-                return redirect('login')
+                return redirect('login_user')
             
             except Exception as e:
                 if 'UNIQUE constraint failed: auth_user.username' in str(e):
