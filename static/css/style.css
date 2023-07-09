@@ -694,11 +694,15 @@ header .header-col.mid .social-icons {
 #mainmenu a {
     position: relative;
     display: inline-block;
-    padding: 22px 30px;
+    padding: 8px 12px;
     text-decoration: none;
     color: #ffffff;
     text-align: center;
     outline: none;
+}
+
+.logo-2 {
+    width: 110px!important;
 }
 
 #mainmenu p {
@@ -18766,12 +18770,12 @@ header > div.container {
 
 
 .btn-pickup {
-    padding: 4px!important;
+    padding: 0px!important;
     color: #fff!important;
 }
 
 .li-pickup {
-    margin-top: 14px!important;
+    margin-top: 4px!important;
 
     background: var(--primary-color);
     padding: 4px 25px !important;
