@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import *
+from dashboard.models import *
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from .decorators import *
@@ -24,8 +24,10 @@ def contact(request):
     return render(request, 'main/pages/contact.html')
 
 def pricing(request):
-    return render(request, 'main/pages/pricing.html')
+    pricing = Pricing.objects.all()
 
+    return render(request, 'main/pages/pricing.html',{'pricing': pricing})
+    
 def pickup(request):
     return render(request, 'main/pages/pickup.html')
 

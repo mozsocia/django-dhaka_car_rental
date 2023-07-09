@@ -29,4 +29,14 @@ urlpatterns = [
     path('about_us_create/', about_us_create, name='about_us_create'),
     path('about_us_update/<int:pk>/', about_us_update, name='about_us_update'),
     path('about_us_delete/<int:pk>/', about_us_delete, name='about_us_delete'),
+
+    # Pricing
+    path('pricing_create/', pricing_create, name='pricing_create'),
+    path('pricing_list/', pricing_list, name='pricing_list'),
+    path('pricing_update/<int:pk>/', pricing_update, name='pricing_update'),
+    path('pricing_delete/<int:pk>/', pricing_delete, name='pricing_delete'),
 ]
+
+
+
+

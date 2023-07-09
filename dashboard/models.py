@@ -70,3 +70,20 @@ class Package_car(models.Model):
 
     def __str__(self):
         return self.car_name_or_model      
+
+class Pricing(models.Model):
+    title = models.CharField(max_length=100)
+    caption = models.CharField(max_length=100)
+    car_name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='car_images/')
+    price = models.DecimalField(max_digits=8, decimal_places=2)  
+
+    menu_choices = (
+        ('hourly', 'Hourly Car Rental'),
+        ('daily_dhaka', 'Daily Basis Rent A Car - Inside Dhaka'),
+        ('daily_outside', 'Daily Basis Rent A Car - Outside Dhaka'),
+        ('monthly', 'Monthly Car Rental'),
+        ('pick_drop', 'Office Pick & Drop'),
+    )
+    menu = models.CharField(max_length=255, choices=menu_choices)    

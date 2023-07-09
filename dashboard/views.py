@@ -191,3 +191,38 @@ def about_us_delete(request,pk):
     banner.delete()
     messages.success(request, 'Successfully delete')
     return redirect('about_us_list')
+
+
+
+# Pricing
+def pricing_list(request):
+    pricing = Pricing.objects.all()
+    return render(request, 'dashboard/pages/pricing/list.html', {'pricing': pricing})
+
+def pricing_create(request):
+    if request.method == 'POST':
+        form = PricingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pricing_list')
+    else:
+        form = PricingForm()
+    return render(request, 'dashboard/pages/pricing/create.html', {'form': form})
+
+def pricing_update(request, pk):
+    pricing = get_object_or_404(Pricing, pk=pk)
+    if request.method == 'POST':
+        form = PricingForm(request.POST, instance=pricing)
+        if form.is_valid():
+            form.save()
+            return redirect('pricing_list')
+    else:
+        form = PricingForm(instance=about_us)
+    return render(request, 'dashboard/pages/pricing/create.html', {'form': form})
+
+
+def pricing_delete(request,pk):
+    pricing=Pricing.objects.get(pk=pk)
+    pricing.delete()
+    messages.success(request, 'Successfully delete')
+    return redirect('about_us_list')

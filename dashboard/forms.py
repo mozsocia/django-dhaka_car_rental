@@ -17,3 +17,7 @@ class AboutUsForm(forms.ModelForm):
     class Meta:
         model = AboutUs
         fields = '__all__'
+class PricingForm(forms.ModelForm):
+    class Meta:
+        model = Pricing
+        fields = '__all__'
