@@ -172,3 +172,16 @@ def logout_user(request):
     logout(request)
     
     return redirect('home')  # Replace 'home' with the appropriate URL name
+    
+
+#  CKEditor
+def my_model_list(request):
+    my_models = MyModel.objects.all()
+    return render(request, 'my_model_list.html', {'my_models': my_models})
+
+def my_model_create(request):
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        MyModel.objects.create(content=content)
+        return redirect('my_model_list')
+    return render(request, 'my_model_create.html')

@@ -13,3 +13,5 @@ class FrontProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
+class MyModel(models.Model):
+    content = models.TextField()

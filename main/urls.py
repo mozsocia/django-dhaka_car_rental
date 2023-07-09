@@ -28,6 +28,10 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     # path('update_profile/', update_profile, name='update_profile'),
 
+    # ckeditor
+    path('' ,my_model_list, name='my_model_list'),
+    path('create/' ,my_model_create, name='my_model_create'),
+
     
 
     
