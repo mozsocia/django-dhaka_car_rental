@@ -18130,6 +18130,7 @@ img {
 
     header.header-light.header-mobile #mainmenu>li>span,
     header.header-light.header-mobile #mainmenu li>ul>li>span {
+        width: 100px;
         background: url(../images/ui/arrow-down.png) center no-repeat;
     }
 
@@ -18769,10 +18770,11 @@ header > div.container {
 }
 
 
-.btn-pickup {
+/* .btn-pickup {
     padding: 0px!important;
     color: #fff!important;
 }
+
 
 .li-pickup {
     margin-top: 4px!important;
@@ -18799,6 +18801,32 @@ header > div.container {
 }
 .li-pickup::after {
     color: #fff!important;
+} */
+
+
+@media (min-width: 980px) {
+    .li-n-pickup {
+        margin-top: 2px!important;
+        background: var(--primary-color);
+        color: #ffffff !important;
+        border-radius: 0.25rem;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.2), 0 2px 10px 0 rgba(0,0,0,.1);
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.2), 0 2px 10px 0 rgba(0,0,0,.1);
+    }
+
+    .li-n-pickup > a {
+
+        color: #ffffff !important;
+        padding: 6px 0px 6px 12px !important;
+
+    }
+
+    .li-n-pickup::after {
+
+        color: #ffffff !important;
+        padding: 0px 8px 0px 12px !important;
+
+    }
 }
 
 #mainmenu>li>a {
