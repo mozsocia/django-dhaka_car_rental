@@ -12,7 +12,8 @@ from django.contrib.auth import logout
 
 
 def home(request):
-    return render(request, 'main/pages/index.html')
+    car = Pricing.objects.all()
+    return render(request, 'main/pages/index.html',{'car':car})
 
 def about(request):
     return render(request, 'main/pages/about.html')

@@ -71,8 +71,8 @@ class Package_car(models.Model):
     car_name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
-    price = models.DecimalField(max_digits=8, decimal_places=2)
-    Car_Seats = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.IntegerField(max_length=15)
+    Car_Seats = models.IntegerField(max_length=15)
     car_type = models.CharField(max_length=100)
 
     MENU_CHOICES = [
@@ -97,8 +97,8 @@ class Pricing(models.Model):
     car_name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
-    price = models.DecimalField(max_digits=8, decimal_places=2)
-    Car_Seats = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.IntegerField(max_length=15)
+    Car_Seats = models.IntegerField(max_length=15)
     car_type = models.CharField(max_length=100)
 
 

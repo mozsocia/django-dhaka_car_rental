@@ -146,122 +146,38 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 offset-lg-3 text-center">
                     <h2>Our Vehicle Fleet</h2>
-                    <p>Sit labore et officia eiusmod tempor officia eiusmod dolor exercitation nulla dolore ut id velit
-                        et ut anim.</p>
-                    <div class="spacer-20"></div>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div id="items-carousel" class="owl-carousel wow fadeIn">
 
+                    {% for x in car %}
                     <div class="col-lg-12">
                         <div class="de-item mb30">
                             <div class="d-img">
-                                <img src="{% static 'images/cars/aaa.jpg' %}" class="img-fluid" alt="">
+                                <img src="{{ x.image.url }}" class="img-fluid" alt="">
                             </div>
                             <div class="d-info">
                                 <div class="d-text">
-                                    <h4>Axio</h4>
-                                    <div class="d-item_like">
-                                        <i class="fa fa-heart"></i><span>74</span>
-                                    </div>
+                                    <h4>{{ x.car_name }}</h4>
+                                    
                                     <div class="d-atr-group">
-                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}"
-                                                alt="">SUV</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">{{ x.car_type }}</span>
+                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">{{ x.Car_Seats }} Seats</span>
                                     </div>
                                     <div class="d-price">
-                                        Daily rate from <span>3700 ৳</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        rate <span>{{ x.price }}৳</span>
+                                        <a class="btn-main" href="tell:+8801967-914140">Call Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-12">
-                        <div class="de-item mb30">
-                            <div class="d-img">
-                                <img src="{% static 'images/cars/nnn.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="d-info">
-                                <div class="d-text">
-                                    <h4>X Noah</h4>
-                                    <div class="d-item_like">
-                                        <i class="fa fa-heart"></i><span>36</span>
-                                    </div>
-                                    <div class="d-atr-group">
-                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}"
-                                                alt="">Sedan</span>
-                                    </div>
-                                    <div class="d-price">
-                                        Daily rate from <span>3400 ৳</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                    {% endfor %}
 
-                    <div class="col-lg-12">
-                        <div class="de-item mb30">
-                            <div class="d-img">
-                                <img src="{% static 'images/cars/hhh.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="d-info">
-                                <div class="d-text">
-                                    <h4>Hiace Super GL</h4>
-                                    <div class="d-item_like">
-                                        <i class="fa fa-heart"></i><span>85</span>
-                                    </div>
-                                    <div class="d-atr-group">
-                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Exotic
-                                            Car</span>
-                                    </div>
-                                    <div class="d-price">
-                                        Daily rate from <span>3500 ৳</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="de-item mb30">
-                            <div class="d-img">
-                                <img src="{% static 'images/cars/ppp.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="d-info">
-                                <div class="d-text">
-                                    <h4>Premio</h4>
-                                    <div class="d-item_like">
-                                        <i class="fa fa-heart"></i><span>59</span>
-                                    </div>
-                                    <div class="d-atr-group">
-                                        <span class="d-atr"><img src="{% static 'images/icons/1.svg' %}" alt="">5</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/2.svg' %}" alt="">2</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/3.svg' %}" alt="">4</span>
-                                        <span class="d-atr"><img src="{% static 'images/icons/4.svg' %}" alt="">Pickup
-                                            Truck</span>
-                                    </div>
-                                    <div class="d-price">
-                                        Daily rate from <span>3900 ৳</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                 </div>
 
@@ -287,7 +203,7 @@
                             +8801967-914140
                         </span>
                     </div>
-                    <a href="#" class="btn-main">Contact Us</a>
+                    <a href="tell:+8801967-914140" class="btn-main">Contact Us</a>
                 </div>
             </div>
         </div>
