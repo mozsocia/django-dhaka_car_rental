@@ -30,51 +30,53 @@
     <!-- section close -->
 
     <section>
+        
+        {% for x in about %}
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInRight">
-                    <h2>We offer customers a wide range of <span class="id-color">commercial cars</span> and <span class="id-color">luxury cars</span> for any occasion.</h2>
+                    <h2>{{ x.about_title }}</h2>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".25s">
-                    Welcome to our car rental service, where we offer an extensive selection of commercial and luxury vehicles to cater to any occasion. 
-                    Whether you're looking for a practical solution for business purposes or seeking a touch of elegance for a special event, 
-                    we have the perfect car to meet your needs.
-                    Our fleet encompasses a wide range of commercial cars, designed to accommodate your professional requirements. 
-                    From spacious vans for transporting goods to reliable trucks for logistical purposes,
-                    we provide practical solutions that enable you to carry out your business operations smoothly and efficiently.
+                    {{ x.description }}
                 </div>
             </div>
             <div class="spacer-double"></div>
             <div class="row text-center">
                 <div class="col-md-3 col-sm-6 mb-sm-30">
                     <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                        <h3 class="timer" data-to="15425" data-speed="3000">0</h3>
-                        Hours of Work
+                        <h3 class="timer" data-to="{{ x.counter_number }}" data-speed="3000">0</h3>
+                       {{ x.counter_name }}
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-sm-30">
                     <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                        <h3 class="timer" data-to="8745" data-speed="3000">0</h3>
-                        Clients Supported
+                        <h3 class="timer" data-to="{{ x.counter_number2 }}" data-speed="3000">0</h3>
+                        {{ x.counter_name2 }}
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-sm-30">
                     <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                        <h3 class="timer" data-to="235" data-speed="3000">0</h3>
-                        Awards Winning
+                        <h3 class="timer" data-to="{{ x.counter_number3 }}" data-speed="3000">0</h3>
+                        {{ x.counter_name3 }}
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-sm-30">
                     <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                        <h3 class="timer" data-to="15" data-speed="3000">0</h3>
-                        Years Experience
+                        <h3 class="timer" data-to="{{ x.counter_number4 }}" data-speed="3000">0</h3>
+                        {{ x.counter_name4 }}
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
+            
+        
     </section>
 
     <section aria-label="section" class="jarallax text-light directors">
+        
+        {% for x in director %}
         <img src="{% static 'images/background/8.jpg' %}" class="jarallax-img" alt="">
         <div class="container">
             <div class="row">
@@ -96,11 +98,11 @@
                                 </div>
                             </div>                                  
                             <div class="fpw-overlay-btm"></div>
-                            <img src="{% static 'images/team/owner.jpeg' %}" class="fp-image img-fluid" alt="">
+                            <img src="{{ x.image.url }}" class="fp-image img-fluid" alt="">
                         </div>
 
-                        <h4>Shafiqul Alam Mirza</h4>
-                        Owner of company
+                        <h4>{{ x.name }}</h4>
+                        {{ x.designation }}
                     </div>
                 </div>
                 
@@ -108,10 +110,8 @@
                 <div class="col-lg-6 col-md-8 col-sm-6 mb30 mx-auto">
                     <div class="de_testi type-2" style="background-size: 100%; background-repeat: no-repeat;">
                         <blockquote>
-                            <h4>"Experience the Road Ahead, Rent with Ease."</h4>
-                            <p>It is with great pleasure that I stand before you today as we gather to celebrate the thriving car rental industry and the incredible opportunities it presents. As owners, we are at the forefront of a dynamic and ever-evolving market, providing convenience and mobility to people around the world.
-
-In an era where flexibility and efficiency are paramount, our industry plays a crucial role. We offer a solution to those seeking transportation for business trips, family vacations, or even local excursions. By providing a wide range of vehicles and personalized services, we empower individuals to explore new horizons and make lasting memories.
+                            <p>
+                                {{ x.message }}
                             </p>
                             
                         </blockquote>
@@ -123,6 +123,9 @@ In an era where flexibility and efficiency are paramount, our industry plays a c
                  
             </div>
         </div>
+        {% endfor %}
+            
+        
     </section>
 
     <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
@@ -142,7 +145,7 @@ In an era where flexibility and efficiency are paramount, our industry plays a c
                             +8801967-914140
                         </span>
                     </div>
-                    <a href="#" class="btn-main">Contact Us</a>
+                    <a href="tell:+8801967-914140" class="btn-main">Contact Us</a>
                 </div>
             </div>
         </div>

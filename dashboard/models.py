@@ -24,6 +24,12 @@ class AboutUs(models.Model):
     description = models.TextField()
     counter_name = models.CharField(max_length=50)
     counter_number = models.IntegerField()
+    counter_name2 = models.CharField(max_length=50)
+    counter_number2 = models.IntegerField()
+    counter_name3 = models.CharField(max_length=50)
+    counter_number3 = models.IntegerField()
+    counter_name4 = models.CharField(max_length=50)
+    counter_number4 = models.IntegerField()
 
     def __str__(self):
         return self.about_title
@@ -37,6 +43,7 @@ class Director(models.Model):
     linkedin_link = models.URLField(blank=True)
     youtube_link = models.URLField(blank=True)
     instagram_link = models.URLField(blank=True)
+    message = models.TextField(blank=True)
 
     def __str__(self):
         return self.name        
@@ -71,8 +78,8 @@ class Package_car(models.Model):
     car_name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
-    price = models.IntegerField(max_length=15)
-    Car_Seats = models.IntegerField(max_length=15)
+    price = models.IntegerField()
+    Car_Seats = models.IntegerField()
     car_type = models.CharField(max_length=100)
 
     MENU_CHOICES = [
@@ -97,8 +104,8 @@ class Pricing(models.Model):
     car_name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
-    price = models.IntegerField(max_length=15)
-    Car_Seats = models.IntegerField(max_length=15)
+    price = models.IntegerField()
+    Car_Seats = models.IntegerField()
     car_type = models.CharField(max_length=100)
 
 

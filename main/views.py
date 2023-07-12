@@ -16,7 +16,13 @@ def home(request):
     return render(request, 'main/pages/index.html',{'car':car})
 
 def about(request):
-    return render(request, 'main/pages/about.html')
+    director = Director.objects.all()
+    about = AboutUs.objects.all()
+    context ={
+        'director':director,
+        'about':about
+    }
+    return render(request, 'main/pages/about.html',context)
 
 def service(request):
     return render(request, 'main/pages/service.html')
