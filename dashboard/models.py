@@ -130,4 +130,28 @@ class ContactUs(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.name            
+        return self.name
+
+class PickUp(models.Model):
+    pick_name = models.CharField(max_length=150)
+    price = models.IntegerField()
+    location_from = models.CharField(max_length=550)
+    location_to = models.CharField(max_length=550)
+    location_to = models.CharField(max_length=550)
+    load_capacity = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='pickup_images/')
+    description = models.TextField()
+
+    menu_choices = (
+        ('Package 1 ton', 'Package 1 ton'),
+        ('Package 2 ton', 'package 2 ton'),
+        ('Package 3 ton', 'package 3 ton'),
+    )
+    package_type = models.CharField(max_length=255, choices=menu_choices)
+    class Meta:
+        verbose_name = 'PickUp'
+        verbose_name_plural = 'PickUp'
+
+    def __str__(self):
+        return self.pick_name
+        

@@ -52,7 +52,8 @@ def pricing(request):
     return render(request, 'main/pages/pricing.html',{'pricing': pricing})
     
 def pickup(request):
-    return render(request, 'main/pages/pickup.html')
+    pickup = PickUp.objects.all()
+    return render(request, 'main/pages/pickup.html',{'pickup':pickup})
 
 
 

@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h1>Pick up</h1>
+                        <h1>Pick Up</h1>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -31,89 +31,52 @@
     <!-- subheader section close -->
 
 
-    <section aria-label="section">
-        <div class="container">
-            <div id="gallery" class="row">
 
-                <div class="col-md-4 mb30 item">
-                    <div class="de-image-hover rounded">
-                        <a href="{% static 'images/gallery/1.jpg' %}" class="image-popup">								
-                            <span class="dih-title-wrap">
-                                <span class="dih-title">Lawachara National Park</span>
-                            </span>
-                            <span class="dih-overlay"></span>
-                            <img src="{% static 'images/gallery/1.jpg' %}" class="lazy img-fluid" alt="">
-                        </a>
+
+
+    <section id="section-car-details">
+        
+        {% for x in pickup %}
+        <div class="container border-shadow-primary p-4 pb-2 mb-3" >
+            <div class="row g-5">
+                <div class="col-lg-5 ">
+                     <div class="car-img">
+                        <img src="{{ x.image.url }}" alt="">
                     </div>
-                </div>
-                
-                <div class="col-md-4 mb30 item">
-                    <div class="de-image-hover rounded">
-                        <a href="{% static 'images/gallery/2.jpg' %}" class="image-popup">								
-                            <span class="dih-title-wrap">
-                                <span class="dih-title">Ham Ham Waterfall</span>
-                            </span>
-                            <span class="dih-overlay"></span>
-                            <img src="{% static 'images/gallery/2.jpg' %}" class="lazy img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb30 item">
-                    <div class="de-image-hover rounded">
-                        <a href="{% static 'images/gallery/3.jpg' %}" class="image-popup">								
-                            <span class="dih-title-wrap">
-                                <span class="dih-title">Madhabpur Lake</span>
-                            </span>
-                            <span class="dih-overlay"></span>
-                            <img src="{% static 'images/gallery/3.jpg' %}" class="lazy img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb30 item">
-                    <div class="de-image-hover rounded">
-                        <a href="{% static 'images/gallery/4.jpg' %}" class="image-popup">								
-                            <span class="dih-title-wrap">
-                                <span class="dih-title">Explore Old Dhaka</span>
-                            </span>
-                            <span class="dih-overlay"></span>
-                            <img src="{% static 'images/gallery/4.jpg' %}" class="lazy img-fluid" alt="">
-                        </a>
-                    </div>
+ 
                 </div>
 
-                <div class="col-md-4 mb30 item">
-                    <div class="de-image-hover rounded">
-                        <a href="{% static 'images/gallery/5.jpg' %}" class="image-popup">								
-                            <span class="dih-title-wrap">
-                                <span class="dih-title">Moinot Ghat</span>
-                            </span>
-                            <span class="dih-overlay"></span>
-                            <img src="{% static 'images/gallery/5.jpg' %}" class="lazy img-fluid" alt="">
-                        </a>
-                    </div>
+                <div class="col-lg-3">
+                    <h3>{{ x.package_type }}</h3>
+
+                    <h4>Features</h4>
+                    <ul class="ul-style-2">
+                        <li> Load Capacity: {{ x.load_capacity }}</li>
+                        <li>Form :{{ x.location_from }}</li>
+                        <li>To :{{ x.location_to }}</li>
+
+                    </ul>
+                    <p>{{ x.description }}</p>
+
+                    
                 </div>
-                
-                <div class="col-md-4 mb30 item">
-                    <div class="de-image-hover rounded">
-                        <a href="{% static 'images/gallery/6.jpg' %}" class="image-popup">								
-                            <span class="dih-title-wrap">
-                                <span class="dih-title">Baliati Jamidar Bari</span>
-                            </span>
-                            <span class="dih-overlay"></span>
-                            <img src="{% static 'images/gallery/6.jpg' %}" class="lazy img-fluid" alt="">
-                        </a>
+
+                <div class="col-lg-3">
+                    <div class="de-price text-center">
+                        rent
+                        <h3>{{ x.price }} ৳</h3>
+                    <a class="btn-main" href="tell:+8801967-914140">Call Now</a>
+
                     </div>
-                </div>
-                
+                    <div class="spacer-30"></div>
+                   
+                </div>                
             </div>
-            
         </div>
+        {% endfor %}
             
-    </section>
-    
 
+    </section>
 
 
 
