@@ -28,6 +28,8 @@ def service(request):
     return render(request, 'main/pages/service.html')
 
 def contact(request):
+    company_det = CompanyDetails.objects.all()
+
     form = ContactUsForm(request.POST)
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
@@ -38,7 +40,8 @@ def contact(request):
             form =ContactUsForm()
             return render(request,'userapp/contact.html')  
     context={
-        'form':form
+        'form':form,
+        'company_det':company_det,
     }
     
     return render(request, 'main/pages/contact.html',context)
