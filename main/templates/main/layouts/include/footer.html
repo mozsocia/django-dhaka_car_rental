@@ -1,23 +1,37 @@
 {% load static %}
 <footer class="text-light">
+
+
+
+    {% with company_details=CompanyDetails.objects.first %}
+    <h1>{{ company_details.number1 }}</h1>
+    <p>{{ company_details.number2 }}</p>
+    <!-- Access other fields of CompanyDetails model here -->
+    {% endwith %}
     <div class="container">
         <div class="row g-custom-x">
             <div class="col-lg-3">
                 <div class="widget">
                     <h5>About "Dhaka Car Rental"</h5>
-                    <p>Welcome to Dhaka Car Rental, your premier car rental service provider. We take pride in offering exceptional services that cater to your transportation needs. With a commitment to excellence, we strive to make your car rental experience seamless and memorable.</p>
+                    <p>Welcome to Dhaka Car Rental, your premier car rental service provider. We take pride in offering
+                        exceptional services that cater to your transportation needs. With a commitment to excellence,
+                        we strive to make your car rental experience seamless and memorable.</p>
                 </div>
             </div>
-            
+
             <div class="col-lg-4">
                 <div class="widget">
                     <h5>Contact Info</h5>
                     <address class="s1">
-                        <span><i class="id-color fa fa-map-marker fa-lg"></i>873,Outer Circular Road,Rajarbagh,<br>	&nbsp; &nbsp; &nbsp;&nbsp;Dhaka-1217 Bangladesh</span>
-                        <span><i class="id-color fa fa-phone fa-lg"></i><a href="tell:+8801967-914140">+8801967-914140</a></span>
-                        <span><i class="id-color fa fa-phone fa-lg"></i><a href="tell:+8801797-777101">+8801797-777101</a></span>
-                        <span><i class="id-color fa fa-envelope-o fa-lg"></i><a href="mailto:mirza.sumon1979@gmail.com">mirza.sumon1979@gmail.com</a></span>
-                        
+                        <span><i class="id-color fa fa-map-marker fa-lg"></i>873,Outer Circular Road,Rajarbagh,<br>
+                            &nbsp; &nbsp; &nbsp;&nbsp;Dhaka-1217 Bangladesh</span>
+                        <span><i class="id-color fa fa-phone fa-lg"></i><a
+                                href="tell:+8801967-914140">+8801967-914140</a></span>
+                        <span><i class="id-color fa fa-phone fa-lg"></i><a
+                                href="tell:+8801797-777101">+8801797-777101</a></span>
+                        <span><i class="id-color fa fa-envelope-o fa-lg"></i><a
+                                href="mailto:mirza.sumon1979@gmail.com">mirza.sumon1979@gmail.com</a></span>
+
                     </address>
                 </div>
             </div>
@@ -43,30 +57,38 @@
                 <div class="widget">
                     <h5>Connect with us</h5>
                     <div class="social-icons">
-                                          <a href="https://www.facebook.com/dhaka.car.rental2015" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-</svg></a>
+                        <a href="https://www.facebook.com/dhaka.car.rental2015" target="_blank"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg></a>
                         <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
                         <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
                         <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="widget">
                     <h5>Payment Methods</h5>
-                    <div class="social-icons payment" >
-                        <div><img class="pay-img" src="{% static 'images/misc/bkash.png' %}" alt=""> <span> +8801967914140</span></div>
-                        
-                        <div>   <img class="pay-img" src="{% static 'images/misc/nagad.png' %}" alt=""> <span> +8801797777101</span></div>
-                     
+                    <div class="social-icons payment">
+                        <div><img class="pay-img" src="{% static 'images/misc/bkash.png' %}" alt=""> <span>
+                                +8801967914140</span></div>
+
+                        <div> <img class="pay-img" src="{% static 'images/misc/nagad.png' %}" alt=""> <span>
+                                +8801797777101</span></div>
+
                         <!--<a href="#"><img class="pay-img" src="{% static 'images/misc/rocket.png' %}" alt=""></a>-->
 
                     </div>
-                </div> 
-                
+                </div>
+
             </div>
         </div>
     </div>
+
+
+
     <div class="subfooter">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -86,4 +108,9 @@
             </div>
         </div>
     </div>
-</footer> 
+
+
+
+
+
+</footer>
