@@ -28,7 +28,20 @@ def service(request):
     return render(request, 'main/pages/service.html')
 
 def contact(request):
-    return render(request, 'main/pages/contact.html')
+    form = ContactUsForm(request.POST)
+    if request.method == 'POST':
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact')
+        else:
+            form =ContactUsForm()
+            return render(request,'userapp/contact.html')  
+    context={
+        'form':form
+    }
+    
+    return render(request, 'main/pages/contact.html',context)
 
 def pricing(request):
     pricing = Pricing.objects.all()
