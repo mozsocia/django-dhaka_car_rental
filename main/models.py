@@ -6,8 +6,9 @@ User = get_user_model()
 
 class FrontProfile(models.Model):
     full_name = models.CharField(max_length=255)
-    phone = models.IntegerField()
-    nid_image = models.ImageField(upload_to='nid_images/')
+    NID_number = models.IntegerField()
+    nid_image_front = models.ImageField(upload_to='nid_images/')
+    nid_image_back = models.ImageField(upload_to='nid_images/')
     profile_image = models.ImageField(upload_to='profile_images/', default='no_profile.jpg')
     
 

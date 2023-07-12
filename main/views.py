@@ -125,22 +125,28 @@ def register(request):
         form = RegisterForm(request.POST, request.FILES)
         if form.is_valid():
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+
             email = form.cleaned_data['email']
-            full_name = form.cleaned_data['full_name']
-            phone = form.cleaned_data['phone']
             
-            nid_image = form.cleaned_data['nid_image']
+            full_name = form.cleaned_data['full_name']
+            
+            NID_number = form.cleaned_data['NID_number']
+            
+            nid_image_front = form.cleaned_data['nid_image_front']
+            
+            nid_image_back = form.cleaned_data['nid_image_back']
+            
+            
             profile_image = form.cleaned_data['profile_image']
 
 
 
             try:
                 # Create a new user
-                user = User.objects.create_user(username=username, password=password, email=email)
+                user = User.objects.create_user(username=username, password='123123123', email=email)
 
                 # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name,phone=phone,nid_image=nid_image, profile_image=profile_image )
+                profile = FrontProfile.objects.create(user=user, full_name=full_name,NID_number=NID_number, nid_image_front=nid_image_front, nid_image_back=nid_image_back, profile_image = profile_image )
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login_user')
@@ -150,8 +156,8 @@ def register(request):
                     normal_error['username'] = "Username already in use"
                 
                     
-                # pprint(str(e))
-                # pprint(normal_error)
+                pprint(str(e))
+                pprint(normal_error)
                 # Handle the exception and display an error message
                 # messages.error(request, f"An error occurred: {str(e)}")
             
@@ -173,9 +179,9 @@ def login_user(request):
 
         if form.is_valid():
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            # password = form.cleaned_data['password']
             # Authenticate user
-            user = authenticate(request, username=username, password=password)
+            user = authenticate(request, username=username, password='123123123')
     
             if user is not None:
                 # User credentials are correct, log in the user
@@ -188,9 +194,9 @@ def login_user(request):
 
         else:
             form_error = form.errors
-            # pprint(form_error)            
+            pprint(form_error)            
 
-    return render(request, 'main/pages/login.html', {'form_error': form_error})    
+    return render(request, 'main/pages/login.html', {'form_error': form_error, 'error':error})    
 
 
 
