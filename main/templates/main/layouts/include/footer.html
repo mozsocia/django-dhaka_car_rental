@@ -1,13 +1,14 @@
 {% load static %}
+{% load custom_tags %}
+
 <footer class="text-light">
 
 
 
-    {% with company_details=CompanyDetails.objects.first %}
-    <h1>{{ company_details.number1 }}</h1>
-    <p>{{ company_details.number2 }}</p>
-    <!-- Access other fields of CompanyDetails model here -->
-    {% endwith %}
+    {% get_details as x %}
+    {% for details in x %}
+    {{ details.number1 }}
+    {% endfor %}
     <div class="container">
         <div class="row g-custom-x">
             <div class="col-lg-3">
