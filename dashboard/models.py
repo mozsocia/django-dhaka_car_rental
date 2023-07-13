@@ -130,11 +130,11 @@ class Pricing(models.Model):
 
 
     menu_choices = (
-        ('hourly', 'Hourly Car Rental'),
-        ('daily_dhaka', 'Daily Basis Rent A Car - Inside Dhaka'),
-        ('daily_outside', 'Daily Basis Rent A Car - Outside Dhaka'),
-        ('monthly', 'Monthly Car Rental'),
-        ('pick_drop', 'Office Pick & Drop'),
+        ('Hourly Car Rental', 'Hourly Car Rental'),
+        ('Daily Basis Rent A Car - Inside Dhaka', 'Daily Basis Rent A Car - Inside Dhaka'),
+        ('Daily Basis Rent A Car - Outside Dhaka', 'Daily Basis Rent A Car - Outside Dhaka'),
+        ('Monthly Car Rental', 'Monthly Car Rental'),
+        ('Office Pick & Drop', 'Office Pick & Drop'),
     )
     menu = models.CharField(max_length=255, choices=menu_choices)    
 

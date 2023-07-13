@@ -130,7 +130,7 @@ class Migration(migrations.Migration):
                 ('price', models.IntegerField()),
                 ('Car_Seats', models.CharField(max_length=100)),
                 ('car_type', models.CharField(max_length=100)),
-                ('menu', models.CharField(choices=[('hourly', 'Hourly Car Rental'), ('daily_dhaka', 'Daily Basis Rent A Car - Inside Dhaka'), ('daily_outside', 'Daily Basis Rent A Car - Outside Dhaka'), ('monthly', 'Monthly Car Rental'), ('pick_drop', 'Office Pick & Drop')], max_length=255)),
+                ('menu', models.CharField(choices=[('Hourly Car Rental', 'Hourly Car Rental'),('Daily Basis Rent A Car - Inside Dhaka', 'Daily Basis Rent A Car - Inside Dhaka'),('Daily Basis Rent A Car - Outside Dhaka', 'Daily Basis Rent A Car - Outside Dhaka'),('Monthly Car Rental', 'Monthly Car Rental'),('Office Pick & Drop', 'Office Pick & Drop')], max_length=255)),
             ],
         ),
        

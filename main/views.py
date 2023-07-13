@@ -57,7 +57,15 @@ def contact(request):
     return render(request, 'main/pages/contact.html',context)
 
 def pricing(request):
-    pricing = Pricing.objects.all()
+    query = request.GET.get('query') 
+    pprint(query)# Assuming the query parameter is named 'query'
+
+    if query:
+        pricing = Pricing.objects.filter(
+            Q(menu__icontains=query)
+        )
+    else:
+        pricing = Pricing.objects.all()
 
     return render(request, 'main/pages/pricing.html',{'pricing': pricing})
     
