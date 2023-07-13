@@ -71,8 +71,8 @@ def information(request):
     return render(request, 'main/pages/information/index.html')
 
 def our_cars_view(request):
-    # Add your logic here
-    return render(request, 'main/pages/information/our_cars.html')
+    pricing = Pricing.objects.all()
+    return render(request, 'main/pages/information/our_cars.html',{'pricing':pricing})
 
 def our_clients_view(request):
     # Add your logic here
