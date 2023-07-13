@@ -30,7 +30,7 @@ def service(request):
 
     if query:
         services = Service.objects.filter(
-            Q(menu__icontains=query) | Q(title__icontains=query)
+            Q(menu__icontains=query)
         )
     else:
         services = Service.objects.all()
@@ -57,8 +57,7 @@ def contact(request):
     return render(request, 'main/pages/contact.html',context)
 
 def pricing(request):
-    query = request.GET.get('query') 
-    pprint(query)# Assuming the query parameter is named 'query'
+    query = request.GET.get('query') # Assuming the query parameter is named 'query'
 
     if query:
         pricing = Pricing.objects.filter(
@@ -70,13 +69,30 @@ def pricing(request):
     return render(request, 'main/pages/pricing.html',{'pricing': pricing})
     
 def pickup(request):
-    pickup = PickUp.objects.all()
+    
+    query = request.GET.get('query') # Assuming the query parameter is named 'query'
+
+    if query:
+        pickup = PickUp.objects.filter(
+            Q(package_type__icontains=query)
+        )
+    else:
+        pickup = PickUp.objects.all()
+
     return render(request, 'main/pages/pickup.html',{'pickup':pickup})
 
 
 
 def package(request):
-    package = Package_car.objects.all()
+    query = request.GET.get('query')  # Assuming the query parameter is named 'query'
+
+    if query:
+        package = Package_car.objects.filter(
+            Q(menu__icontains=query)
+        )
+    else:
+        package = Package_car.objects.all()
+
     return render(request, 'main/pages/package.html',{'package': package})
 
 def test(request):

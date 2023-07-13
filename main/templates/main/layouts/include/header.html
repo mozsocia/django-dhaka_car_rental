@@ -1,6 +1,7 @@
 {% load static %}
 {% load my_filters %}
 {% load my_service %}
+{% load my_package %}
 
 {% load custom_tags %}
 
@@ -14,10 +15,12 @@
         <div class="container">
             <div class="topbar-left xs-hide">
                 <div class="topbar-widget">
-                    <div class="topbar-widget"><a href="tell:{{ details.number1 }}"><i
-                                class="fa fa-phone"></i>{{ details.number1 }}</a></div>
-                    <div class="topbar-widget"><a href="tell:{{ details.number2 }}"><i
-                                class="fa fa-phone"></i>{{ details.number2 }}</a></div>
+                    <div class="topbar-widget"><a href="tell:{{ details.number1 }}"><i class="fa fa-phone">
+
+                            </i>{{ details.number1 }}</a></div>
+                    <div class="topbar-widget"><a href="tell:{{ details.number2 }}"><i class="fa fa-phone">
+
+                            </i>{{ details.number2 }}</a></div>
                     <div class="topbar-widget sm-hide"><a href="mailto:{{ details.email }}"><i
                                 class="fa fa-envelope"></i>{{ details.email }}</a></div>
                     <!--<div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>-->
@@ -85,9 +88,12 @@
 
                             <li class="li-n-pickup"><a class="menu-item" href="{% url 'pickup' %}">PICK UP</a>
                                 <ul>
-                                    <li><a class="menu-item">Package one</a></li>
-                                    <li><a class="menu-item">Package two</a></li>
-                                    <li><a class="menu-item">Package two</a></li>
+                                    <li><a class="menu-item" href="/pickup/?query=Package 1 ton">Package 1 ton</a>
+                                    </li>
+                                    <li><a class="menu-item" href="/pickup/?query=Package 2 ton">Package 2 ton</a>
+                                    </li>
+                                    <li><a class="menu-item" href="/pickup/?query=Package 3 ton">Package 3 ton</a>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -101,14 +107,9 @@
                                     {% get_services as service_list %}
                                     {% for x in service_list %}
 
-
                                     <li><a class="menu-item" href="/service/?tab={{ x.menu|slugify_filter }}-tab">
                                             {{ x.menu }}</a>
                                     </li>
-
-
-
-
 
                                     {% endfor %}
                                 </ul>
@@ -137,15 +138,16 @@
 
                             <li><a class="menu-item" href="/package/">PACKAGES</a>
                                 <ul>
-                                    <li><a class="menu-item">Airport Transfer</a></li>
-                                    <li><a class="menu-item">Inter District Pick&amp;Drop</a></li>
-                                    <li><a class="menu-item">Rent A Car in Sylhet</a></li>
-                                    <li><a class="menu-item">Rent A Car in Chittagong</a></li>
-                                    <li><a class="menu-item">Rent A Car in Cox's Bazar</a></li>
-                                    <li><a class="menu-item">Day Tour Nearby Dhaka</a></li>
-                                    <li><a class="menu-item">Rent A Car in Sajek Khagrachari</a></li>
-                                    <li><a class="menu-item">Tour Package</a></li>
-                                    <li><a class="menu-item">Flexible Hourly Packages</a></li>
+
+
+                                    {% get_packages as package_list %}
+                                    {% for x in package_list %}
+
+                                    <li><a class="menu-item" href="/package/?query={{ x.menu }}">
+                                            {{ x.menu }}</a>
+                                    </li>
+
+                                    {% endfor %}
                                 </ul>
                             </li>
 
