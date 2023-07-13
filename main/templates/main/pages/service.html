@@ -1,5 +1,8 @@
 {% extends 'main/layouts/base.html' %}
 {% load static %}
+{% load my_filters %}
+{% load my_service %}
+
 
 
 {% block style %}
@@ -47,49 +50,19 @@
                             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
                                 aria-orientation="vertical">
 
+                                {% for service in services %}
+                                <button class="nav-link" id="{{ service.menu|slugify_filter }}-tab"
+                                    data-bs-toggle="pill" data-bs-target="#{{ service.menu|slugify_filter }}"
+                                    type="button" role="tab" aria-controls="{{ service.menu|slugify_filter }}"
+                                    aria-selected="true">{{ service.menu }}</button>
 
-                                <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill"
+
+                                {% endfor %}
+
+
+                                <!-- <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill"
                                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                                    aria-selected="true">Airport Transfer</button>
-                                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-profile" type="button" role="tab"
-                                    aria-controls="v-pills-profile" aria-selected="false">Hourly Car Rental</button>
-                                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-messages" type="button" role="tab"
-                                    aria-controls="v-pills-messages" aria-selected="false">Daily Basis Rent A Car -
-                                    Inside Dhaka</button>
-                                <button class="nav-link" id="v-pills-settings12-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings12" type="button" role="tab"
-                                    aria-controls="v-pills-settings12" aria-selected="false">Daily Basis Rent A Car -
-                                    Outside Dhaka</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Monthly Car Rental</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Office Pick &amp;
-                                    Drop</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Inter District
-                                    Pick&amp;Drop</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Rent A Car in Sylhet</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Rent A Car in Chittagong</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Rent A Car in Cox's Bazar</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Rent A Car in Sajek Khagrachari</button>
-                                <button class="nav-link" id="v-pills-settings1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false">Tour Package</button>
-
-
+                                    aria-selected="true">Airport Transfer</button> -->
 
 
 
@@ -98,8 +71,10 @@
                         </div>
                         <div class="col-md-9">
                             <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab">
+
+                                {% for service in services %}
+                                <div class="tab-pane fade" id="{{ service.menu|slugify_filter }}" role="tabpanel"
+                                    aria-labelledby="{{ service.menu|slugify_filter }}-tab">
 
                                     <div class="de-post-type-1"
                                         style="background-size: 100%; background-repeat: no-repeat;">
@@ -107,204 +82,27 @@
                                         <div class="d-content"
                                             style="background-size: 100%; background-repeat: no-repeat;">
 
-                                            <!-- <a href="news-single.html" class="btn-main">Check Our Price Plan</a> -->
 
                                             <div class="de-item border-shadow-primary">
                                                 <div class="d-img"
                                                     style="margin-bottom: 15px;background-size: 100%; background-repeat: no-repeat;">
-                                                    <!-- <img src="/static/images/cars/service-1.jpg" class="img-fluid" alt=""> -->
+                                                    <img src="{{ service.image.url }}" class="img-fluid" alt="">
                                                 </div>
-                                                <h4><a href="news-single.html">Airport Transfer Travel
-                                                        Experience<span></span></a></h4>
+                                                <h4><a href="news-single.html">{{ service.title }}<span></span></a></h4>
+                                                <p>{{ service.menu }}</p>
 
-                                                <div class="d-meta"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <span class="d-by">Standard </span>
-                                                    <span class="d-date">Sedan Car</span>
-                                                    <span class="d-tags">10 Hours</span>
-                                                </div>
-
-                                                <p>Enjoy a comfortable and convenient travel experience with our Axio Sedan, a popular choice for airport transfers and various travel needs. With its stylish design and reliable performance, the Axio Sedan is perfect for individuals and small groups looking for a standard sedan car rental.
-
-During your 10-hour rental period, you can explore your destination with ease and flexibility. The Axio Sedan provides a smooth and comfortable ride, allowing you to travel in style and comfort. Whether you're heading to business meetings, sightseeing tours, or special events, the Axio Sedan offers the perfect balance of functionality and elegance.
-                                                </p>
+                                                <p>{{ service.body }}</p>
                                                 <a href="news-single.html" class="btn-main">Check Our Price Plan</a>
 
                                             </div>
 
 
-
-
-
                                         </div>
                                     </div>
 
-
-
-
-
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                                    aria-labelledby="v-pills-profile-tab">
-                                    <div class="de-post-type-1"
-                                        style="background-size: 100%; background-repeat: no-repeat;">
-                                        <div class="d-content"
-                                            style="background-size: 100%; background-repeat: no-repeat;">
-                                            <div class="de-item border-shadow-primary">
-                                                <div class="d-img"
-                                                    style="margin-bottom: 15px;background-size: 100%; background-repeat: no-repeat;">
-                                                    <img src="/static/images/cars/ppp.jpg" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                                <h4><a href="news-single.html">Hourly Car Rental Travel
-                                                        Experience<span></span></a></h4>
+                                {% endfor %}
 
-                                                <div class="d-meta"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <span class="d-by">Premium </span>
-                                                    <span class="d-date">Sedan Car</span>
-                                                    <span class="d-tags">7 Hours</span>
-                                                </div>
-                                                <!-- <div class="d-image"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <img alt="" src="{% static 'images/news-2/pic-blog-1.jpg' %}"
-                                                        class="lazy">
-                                                </div> -->
-                                                <p>Whether you're heading to business meetings, sightseeing tours, or special events, the Axio Sedan offers the perfect balance of functionality and elegance.
-
-With its thoughtfully designed interior, you'll find ample space and comfort features that enhance your travel experience. The sedan is equipped with modern amenities to ensure your convenience and enjoyment throughout your journey.
-
-Our commitment to exceptional service extends to our customer support team, who are available to assist you throughout your rental. If you have any questions or need assistance during your 10-hour rental period, our team is just a phone call away, ready to provide prompt and reliable support.
-                                                </p>
-                                                <a href="news-single.html" class="btn-main">Check Our Price Plan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                                    aria-labelledby="v-pills-messages-tab">
-                                    <div class="de-post-type-1"
-                                        style="background-size: 100%; background-repeat: no-repeat;">
-                                        <div class="d-content"
-                                            style="background-size: 100%; background-repeat: no-repeat;">
-                                            <div class="de-item border-shadow-primary">
-                                                <div class="d-img"
-                                                    style="margin-bottom: 15px;background-size: 100%; background-repeat: no-repeat;">
-                                                    <img src="/static/images/cars/hhh.jpg" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                                <h4><a href="news-single.html">Daily Basis Rent A Car -
-                                                        Inside Dhaka<span></span></a></h4>
-
-                                                <div class="d-meta"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <span class="d-by">Standard </span>
-                                                    <span class="d-date">Sedan Car</span>
-                                                    <span class="d-tags">10 Hours</span>
-                                                </div>
-                                                <!-- <div class="d-image"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <img alt="" src="{% static 'images/news-2/pic-blog-1.jpg' %}"
-                                                        class="lazy">
-                                                </div> -->
-                                                <p>Our Standard Sedan Car offers a comfortable and reliable option for your transportation needs. With its spacious interior and smooth handling, it provides a pleasant driving experience. Whether you're navigating the bustling streets of Dhaka or embarking on a day trip in and around the city, our Standard Sedan Car is designed to meet your expectations.
-
-With a focus on customer satisfaction, our rental package ensures that you have the vehicle at your disposal for a total of 10 hours. This allows you ample time to complete your desired itinerary without feeling rushed. Whether you have meetings to attend, places to visit, or events to celebrate, our Standard Sedan Car is the ideal choice for your daily transportation needs.
-                                                </p>
-                                                <a href="news-single.html" class="btn-main">Check Our Price Plan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-settings12" role="tabpanel"
-                                    aria-labelledby="v-pills-settings12-tab">
-                                    <div class="de-post-type-1"
-                                        style="background-size: 100%; background-repeat: no-repeat;">
-                                        <div class="d-content"
-                                            style="background-size: 100%; background-repeat: no-repeat;">
-                                            <div class="de-item border-shadow-primary">
-                                                <div class="d-img"
-                                                    style="margin-bottom: 15px;background-size: 100%; background-repeat: no-repeat;">
-                                                    <img src="/static/images/cars/aaa.jpg" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                                <h4><a href="news-single.html">Daily Basis Rent A Car -
-                                                        Outside Dhaka<span></span></a></h4>
-
-                                                <div class="d-meta"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <span class="d-by">Hiace</span>
-                                                    <span class="d-date">Micro Bus-</span>
-                                                    <span class="d-tags">10 Hours</span>
-                                                </div>
-                                                <!-- <div class="d-image"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <img alt="" src="{% static 'images/news-2/pic-blog-1.jpg' %}"
-                                                        class="lazy">
-                                                </div> -->
-                                                <p>Introducing our Daily Basis Rent A Car service for travel outside Dhaka, providing you with the perfect solution for your transportation needs. Experience the convenience and comfort of our Standard Sedan Car rental package, ideal for a 10-hour duration.
-
-Our Standard Sedan Car offers a balance of style, reliability, and affordability. With comfortable seating and ample storage space, it provides a smooth and enjoyable ride for your journey. Whether you're traveling for business meetings, sightseeing, or exploring new destinations, our Standard Sedan Car is designed to cater to your needs.
-
-Benefit from our flexible rental options, allowing you to choose the duration that suits your travel plans.</p>
-                                                <a href="news-single.html" class="btn-main">Check Our Price Plan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="v-pills-settings1" role="tabpanel"
-                                    aria-labelledby="v-pills-settings1-tab">
-                                    <div class="de-post-type-1"
-                                        style="background-size: 100%; background-repeat: no-repeat;">
-                                        <div class="d-content"
-                                            style="background-size: 100%; background-repeat: no-repeat;">
-                                            <div class="de-item border-shadow-primary">
-                                                <div class="d-img"
-                                                    style="margin-bottom: 15px;background-size: 100%; background-repeat: no-repeat;">
-                                                    <img src="/static/images/cars/jeep-renegade.jpg" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                                <h4><a href="news-single.html">Daily Basis Rent A Car -
-                                                        Outside Dhaka<span></span></a></h4>
-
-                                                <div class="d-meta"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <span class="d-by">Hiace</span>
-                                                    <span class="d-date">Micro Bus-</span>
-                                                    <span class="d-tags">10 Hours</span>
-                                                </div>
-                                                <!-- <div class="d-image"
-                                                    style="background-size: 100%; background-repeat: no-repeat;">
-                                                    <img alt="" src="{% static 'images/news-2/pic-blog-1.jpg' %}"
-                                                        class="lazy">
-                                                </div> -->
-                                                <p>Ex ut dolore laboris pariatur voluptate reprehenderit qui dolore
-                                                    officia
-                                                    voluptate est nulla incididunt in tempor aliqua incididunt cupidatat
-                                                    ut
-                                                    cupidatat qui consectetur cillum id labore sunt id sint magna
-                                                    exercitation enim.Aute sunt incididunt amet commodo est sint nisi
-                                                    deserunt pariatur do.
-                                                    Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit
-                                                    sunt. Qui
-                                                    minim sit magna Lorem id et dolore velit Lorem amet exercitation
-                                                    duis
-                                                    deserunt.
-                                                    Anim id labore elit adipisicing ut in id occaecat pariatur ut
-                                                    ullamco ea
-                                                    tempor
-                                                    duis
-                                                    voluptate est nulla incididunt in tempor aliqua incididunt cupidatat
-                                                    ut
-                                                    cupidatat qui consectetur cillum id labore sunt id sint magna
-                                                    exercitation enim.Aute sunt incididunt amet commodo est sint nisi
-                                                    deserunt pariatur do.</p>
-                                                <a href="news-single.html" class="btn-main">Check Our Price Plan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

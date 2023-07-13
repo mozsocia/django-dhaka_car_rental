@@ -1,4 +1,6 @@
 {% load static %}
+{% load my_filters %}
+{% load my_service %}
 
 <!-- header begin -->
 <header class="transparent header-light scroll-light has-topbar" style="border-bottom: 2px solid #78ca5c;">
@@ -89,24 +91,21 @@
 
                             </li>
 
-                            <li><a class="menu-item" href="/service/">SERVICES</a>
+                            <li><a class="menu-item" href="/service/?tab=hourly-car-rental-tab">SERVICES</a>
                                 <ul>
-                                    <li><a class="menu-item" href="/service/?tab=v-pills-home-tab">Airport Transfer</a>
+                                    {% get_services as service_list %}
+                                    {% for x in service_list %}
+
+
+                                    <li><a class="menu-item" href="/service/?tab={{ x.menu|slugify_filter }}-tab">
+                                            {{ x.menu }}</a>
                                     </li>
-                                    <li><a class="menu-item" href="/service/?tab=v-pills-profile-tab">Hourly Car
-                                            Rental</a></li>
-                                    <li><a class="menu-item" href="/service/?tab=v-pills-messages-tab">Daily Basis Rent
-                                            A Car - Inside Dhaka</a></li>
-                                    <li><a class="menu-item" href="/service/?tab=v-pills-settings12-tab">Daily Basis
-                                            Rent A Car - Outside Dhaka</a></li>
-                                    <!-- <li><a class="menu-item" href="#">Monthly Car Rental</a></li>
-                                        <li><a class="menu-item" href="#">Office Pick &amp; Drop</a></li>
-                                        <li><a class="menu-item" href="#">Inter District Pick&amp;Drop</a></li>
-                                        <li><a class="menu-item" href="#">Rent A Car in Sylhet</a></li>
-                                        <li><a class="menu-item" href="#">Rent A Car in Chittagong</a></li>
-                                        <li><a class="menu-item" href="#">Rent A Car in Cox's Bazar</a></li>
-                                        <li><a class="menu-item" href="#">Rent A Car in Sajek Khagrachari</a></li>
-                                        <li><a class="menu-item" href="#">Tour Package</a></li> -->
+
+
+
+
+
+                                    {% endfor %}
                                 </ul>
 
 

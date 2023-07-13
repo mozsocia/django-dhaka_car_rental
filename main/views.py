@@ -7,6 +7,7 @@ from .forms import *
 from .models import *
 from django.db import transaction
 from pprint import pprint
+from django.db.models import Q
 
 from django.contrib.auth import logout
 
@@ -25,7 +26,16 @@ def about(request):
     return render(request, 'main/pages/about.html',context)
 
 def service(request):
-    return render(request, 'main/pages/service.html')
+    query = request.GET.get('query')  # Assuming the query parameter is named 'query'
+
+    if query:
+        services = Service.objects.filter(
+            Q(menu__icontains=query) | Q(title__icontains=query)
+        )
+    else:
+        services = Service.objects.all()
+    
+    return render(request, 'main/pages/service.html', {'services':services})
 
 def contact(request):
     company_det = CompanyDetails.objects.all()
