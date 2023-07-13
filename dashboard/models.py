@@ -102,15 +102,15 @@ class Package_car(models.Model):
     car_type = models.CharField(max_length=100)
 
     MENU_CHOICES = [
-        ('airport_transfer', 'Airport Transfer'),
-        ('inter_district_pick_drop', 'Inter District Pick&Drop'),
-        ('rent_car_sylhet', 'Rent A Car in Sylhet'),
-        ('rent_car_chittagong', 'Rent A Car in Chittagong'),
-        ('rent_car_cox_bazar', "Rent A Car in Cox's Bazar"),
-        ('day_tour_dhaka', 'Day Tour Nearby Dhaka'),
-        ('rent_car_sajek_khagrachari', 'Rent A Car in Sajek Khagrachari'),
-        ('tour_package', 'Tour Package'),
-        ('hourly_packages', 'Flexible Hourly Packages'),
+        ('Airport Transfer', 'Airport Transfer'),
+        ('Inter District Pick&Drop', 'Inter District Pick&Drop'),
+        ('Rent A Car in Sylhet', 'Rent A Car in Sylhet'),
+        ('Rent A Car in Chittagong', 'Rent A Car in Chittagong'),
+        ("Rent A Car in Cox's Bazar", "Rent A Car in Cox's Bazar"),
+        ('Day Tour Nearby Dhaka', 'Day Tour Nearby Dhaka'),
+        ('Rent A Car in Sajek Khagracharii', 'Rent A Car in Sajek Khagrachari'),
+        ('Tour Package', 'Tour Package'),
+        ('Flexible Hourly Packages', 'Flexible Hourly Packages'),
     ]
     menu = models.CharField(max_length=255, choices=MENU_CHOICES)
 
