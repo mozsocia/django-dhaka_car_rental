@@ -18806,7 +18806,8 @@ header > div.container {
 
 @media (min-width: 993px) {
     .li-n-pickup {
-        margin-top: 2px!important;
+        line-height: 1.4;
+        margin-top: 5px!important;
         background: var(--primary-color);
         color: #ffffff !important;
         border-radius: 0.25rem;
