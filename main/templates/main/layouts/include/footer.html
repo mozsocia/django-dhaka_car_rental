@@ -3,20 +3,14 @@
 
 <footer class="text-light">
 
-
-
-    {% get_details as x %}
-    {% for details in x %}
-    {{ details.number1 }}
-    {% endfor %}
     <div class="container">
+        {% get_details as x %}
+        {% for details in x %}
         <div class="row g-custom-x">
             <div class="col-lg-3">
                 <div class="widget">
                     <h5>About "Dhaka Car Rental"</h5>
-                    <p>Welcome to Dhaka Car Rental, your premier car rental service provider. We take pride in offering
-                        exceptional services that cater to your transportation needs. With a commitment to excellence,
-                        we strive to make your car rental experience seamless and memorable.</p>
+                    <p>{{ details.about }}</p>
                 </div>
             </div>
 
@@ -27,11 +21,11 @@
                         <span><i class="id-color fa fa-map-marker fa-lg"></i>873,Outer Circular Road,Rajarbagh,<br>
                             &nbsp; &nbsp; &nbsp;&nbsp;Dhaka-1217 Bangladesh</span>
                         <span><i class="id-color fa fa-phone fa-lg"></i><a
-                                href="tell:+8801967-914140">+8801967-914140</a></span>
+                                href="tell:{{ details.number1 }}">{{ details.number1 }}</a></span>
                         <span><i class="id-color fa fa-phone fa-lg"></i><a
-                                href="tell:+8801797-777101">+8801797-777101</a></span>
+                                href="tell:{{ details.number2 }}">{{ details.number2 }}</a></span>
                         <span><i class="id-color fa fa-envelope-o fa-lg"></i><a
-                                href="mailto:mirza.sumon1979@gmail.com">mirza.sumon1979@gmail.com</a></span>
+                                href="mailto:{{ details.email }}">{{ details.email }}</a></span>
 
                     </address>
                 </div>
@@ -58,7 +52,7 @@
                 <div class="widget">
                     <h5>Connect with us</h5>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/dhaka.car.rental2015" target="_blank"><svg
+                        <a href="{{ details.facebook_link }}" target="_blank"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="bi bi-facebook" viewBox="0 0 16 16">
                                 <path
@@ -86,6 +80,7 @@
 
             </div>
         </div>
+        {% endfor %}
     </div>
 
 

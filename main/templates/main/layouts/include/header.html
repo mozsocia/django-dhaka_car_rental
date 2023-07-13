@@ -2,20 +2,24 @@
 {% load my_filters %}
 {% load my_service %}
 
+{% load custom_tags %}
+
+
 <!-- header begin -->
 <header class="transparent header-light scroll-light has-topbar" style="border-bottom: 2px solid #78ca5c;">
 
-
+    {% get_details as x %}
+    {% for details in x %}
     <div id="topbar" class="topbar-dark text-light">
         <div class="container">
             <div class="topbar-left xs-hide">
                 <div class="topbar-widget">
-                    <div class="topbar-widget"><a href="tell:+8801967-914140"><i
-                                class="fa fa-phone"></i>+8801967-914140</a></div>
-                    <div class="topbar-widget"><a href="tell:8801797-777201"><i
-                                class="fa fa-phone"></i>+8801797-777201</a></div>
-                    <div class="topbar-widget sm-hide"><a href="mailto:mirza.sumon1979@gmail.com"><i
-                                class="fa fa-envelope"></i>mirza.sumon1979@gmail.com</a></div>
+                    <div class="topbar-widget"><a href="tell:{{ details.number1 }}"><i
+                                class="fa fa-phone"></i>{{ details.number1 }}</a></div>
+                    <div class="topbar-widget"><a href="tell:{{ details.number2 }}"><i
+                                class="fa fa-phone"></i>{{ details.number2 }}</a></div>
+                    <div class="topbar-widget sm-hide"><a href="mailto:{{ details.email }}"><i
+                                class="fa fa-envelope"></i>{{ details.email }}</a></div>
                     <!--<div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>-->
                 </div>
             </div>
@@ -23,7 +27,7 @@
             <div class="topbar-right">
                 <div class="social-icons">
 
-                    <a href="https://www.facebook.com/dhaka.car.rental2015" target="_blank">
+                    <a href="{{ details.facebook_link }}" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-facebook" viewBox="0 0 16 16">
                             <path
@@ -56,6 +60,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
+    {% endfor %}
 
 
     <div class="container">
