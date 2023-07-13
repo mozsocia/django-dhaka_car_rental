@@ -50,13 +50,32 @@ class Director(models.Model):
 
 
 class Service(models.Model):
-    image = models.ImageField(upload_to='services')
+    image = models.ImageField(upload_to='services',blank=True, null=True)
     title = models.CharField(max_length=100)
-    car_type = models.CharField(max_length=100)
-    body = models.TextField()
-    time = models.CharField(max_length=100)
-    service_name = models.CharField(max_length=100)
-    description = models.TextField()        
+    car_type = models.CharField(max_length=100,blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    time = models.CharField(max_length=100,blank=True, null=True)
+    service_name = models.CharField(max_length=100,blank=True, null=True)
+    description = models.TextField(blank=True, null=True)        
+    s_from = models.CharField(max_length=100,blank=True, null=True)
+    s_to = models.CharField(max_length=100,blank=True, null=True)
+    
+    MENU_CHOICES = [
+        ('Hourly Car Rental', 'Hourly Car Rental'),
+        ('Daily Basis Rent A Car - Inside Dhaka', 'Daily Basis Rent A Car - Inside Dhaka'),
+        ('Daily Basis Rent A Car - Outside Dhaka', 'Daily Basis Rent A Car - Outside Dhaka'),
+        ('Monthly Car Rental', 'Monthly Car Rental'),
+        ('Office Pick & Drop', 'Office Pick & Drop'),
+        ('Inter District Pick&amp', 'Inter District Pick&amp'),
+        ('Rent A Car in Sylhet', 'Rent A Car in Sylhet'),
+        ('Rent A Car in Chittagong', 'Rent A Car in Chittagong'),
+        ('Rent A Car in Cox s Bazar', 'Rent A Car in Cox s Bazar'),
+        ('Rent A Car in Sajek Khagrachari', 'Rent A Car in Sajek Khagrachari'),
+        ('Tour Package', 'Tour Package'),
+    ]
+    menu = models.CharField(max_length=255, choices=MENU_CHOICES)
+
+
 
     def __str__(self):
         return self.title 
@@ -79,7 +98,7 @@ class Package_car(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
     price = models.IntegerField()
-    Car_Seats = models.IntegerField()
+    Car_Seats = models.CharField(max_length=100)
     car_type = models.CharField(max_length=100)
 
     MENU_CHOICES = [
@@ -105,7 +124,7 @@ class Pricing(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='car_images/')
     price = models.IntegerField()
-    Car_Seats = models.IntegerField()
+    Car_Seats = models.CharField(max_length=100)
     car_type = models.CharField(max_length=100)
 
 
