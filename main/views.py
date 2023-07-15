@@ -9,6 +9,8 @@ from django.db import transaction
 from pprint import pprint
 from django.db.models import Q
 from django.db.models import Count
+from django.db import IntegrityError
+from django.db import transaction
 
 from django.contrib.auth import logout
 
@@ -154,7 +156,6 @@ from django.shortcuts import render, redirect
 
 
 @guest_only
-@transaction.atomic
 def register(request):
     normal_error = {}
     form_error = None
@@ -180,16 +181,17 @@ def register(request):
 
 
             try:
+                with transaction.atomic():
                 # Create a new user
-                user = User.objects.create_user(username=username, password='123123123', email=email)
+                    user = User.objects.create_user(username=username, password='123123123', email=email)
 
-                # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name,NID_number=NID_number, nid_image_front=nid_image_front, nid_image_back=nid_image_back, profile_image = profile_image )
+                    # Create a profile for the user
+                    profile = FrontProfile.objects.create(user=user, full_name=full_name,NID_number=NID_number, nid_image_front=nid_image_front, nid_image_back=nid_image_back, profile_image = profile_image )
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login_user')
             
-            except Exception as e:
+            except IntegrityError  as e:
                 if 'UNIQUE constraint failed: auth_user.username' in str(e):
                     normal_error['username'] = "Username already in use"
                 
