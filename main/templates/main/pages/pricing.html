@@ -143,7 +143,7 @@
                     <div class="field-set">
                       <label for="from_division">From Division:</label>
                       <select id="from_division" class="form-control">
-                        <option value="">Select Division</option>
+                        <option value="">Select</option>
                       </select>
 
                     </div>
@@ -154,7 +154,7 @@
 
                       <label for="from_district">From District:</label>
                       <select id="from_district" class="form-control">
-                        <option value="">Select District</option>
+                        <option value="">Select </option>
                       </select>
 
                     </div>
@@ -165,7 +165,7 @@
 
                       <label for="from_upazila">From Upazila:</label>
                       <select id="from_upazila" class="form-control">
-                        <option value="">Select Upazila</option>
+                        <option value="">Select </option>
                       </select>
                     </div>
                   </div>
@@ -177,7 +177,7 @@
                     <div class="field-set">
                       <label for="to_division">To Division:</label>
                       <select id="to_division" class="form-control">
-                        <option value="">Select Division</option>
+                        <option value="">Select </option>
                       </select>
                     </div>
                   </div>
@@ -188,7 +188,7 @@
 
                       <label for="to_district">To District:</label>
                       <select id="to_district" class="form-control">
-                        <option value="">Select District</option>
+                        <option value="">Select </option>
                       </select>
                     </div>
                   </div>
@@ -198,7 +198,7 @@
 
                       <label for="to_upazila">To Upazila:</label>
                       <select id="to_upazila" class="form-control">
-                        <option value="">Select Upazila</option>
+                        <option value="">Select </option>
                       </select>
                     </div>
                   </div>
@@ -210,7 +210,7 @@
 
 
                 <input type='submit' id='send_message' value='Submit' class="btn-main color-2 me-2">
-                <input type="button" id="reset_filters" value="Reset Filters" class="btn-main color-2">
+                <input type="button" id="reset_filters" value="Reset" class="btn-main color-2">
 
               </form>
 
@@ -286,19 +286,19 @@
       // Get the selected car seat values
       var selectedCarSeatValues = [];
       $('#carseat_filter input[type="checkbox"]:checked').each(function () {
-        selectedCarSeatValues.push($(this).val());
+        selectedCarSeatValues.push($(this).val().toLowerCase());
       });
 
       // Get the selected vehicle name values
       var selectedVehicleNameValues = [];
       $('#carname_filter input[type="checkbox"]:checked').each(function () {
-        selectedVehicleNameValues.push($(this).val());
+        selectedVehicleNameValues.push($(this).val().toLowerCase());
       });
 
       // Get the selected car type values
       var selectedCarTypeValues = [];
       $('#pickup_filter input[type="checkbox"]:checked').each(function () {
-        selectedCarTypeValues.push($(this).val());
+        selectedCarTypeValues.push($(this).val().toLowerCase());
       });
 
       // Loop through each 'div.de-item-list' element
@@ -306,9 +306,9 @@
         // Get the car seat value from the 'span' with id 'carseat'
         var carSeatValue = parseInt($(this).find('span#carseat').text());
         // Get the car name value from the 'span' with id 'carname'
-        var carNameValue = $(this).find('span#carname').text().trim();
+        var carNameValue = $(this).find('span#carname').text().trim().toLowerCase();
         // Get the car type value from the 'span' with id 'cartype'
-        var carTypeValue = $(this).find('span#cartype').text().trim();
+        var carTypeValue = $(this).find('span#cartype').text().trim().toLowerCase();
 
         var showItem = true;
 

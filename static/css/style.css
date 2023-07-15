@@ -12748,9 +12748,9 @@ body.dark-scheme::-webkit-scrollbar-track,#de_modal::-webkit-scrollbar-track {
 
 .di-small-2 {
     position: absolute;
-    width: 40%;
-    right: -10%;
-    bottom: -10%;
+    width: 110%;
+    /* right: -10%;
+    bottom: -10%; */
     z-index: 1;
 }
 

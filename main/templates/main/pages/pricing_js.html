@@ -3541,7 +3541,7 @@
       ]
     }
 
-    // Populate divisions
+    /// Populate divisions
     var divisionSelectTo = $('#to_division');
     var divisionSelectFrom = $('#from_division');
     $.each(jsonData.divisions, function (index, division) {
@@ -3555,11 +3555,28 @@
       }));
     });
 
+    // Add "Select" option to district select inputs
+    $('#to_district').prepend($('<option>', {
+      value: '',
+      text: 'Select'
+    }));
+
+    $('#from_district').prepend($('<option>', {
+      value: '',
+      text: 'Select'
+    }));
+
     // Populate districts based on division selection (To)
     divisionSelectTo.change(function () {
       var selectedDivision = $(this).val();
       var districtSelect = $('#to_district');
       districtSelect.empty(); // Clear existing options
+
+      // Add "Select" option to district select
+      districtSelect.prepend($('<option>', {
+        value: '',
+        text: 'Select'
+      }));
 
       // Filter districts based on the selected division
       var filteredDistricts = jsonData.districts.filter(function (district) {
@@ -3583,6 +3600,12 @@
       var selectedDivision = $(this).val();
       var districtSelect = $('#from_district');
       districtSelect.empty(); // Clear existing options
+
+      // Add "Select" option to district select
+      districtSelect.prepend($('<option>', {
+        value: '',
+        text: 'Select'
+      }));
 
       // Filter districts based on the selected division
       var filteredDistricts = jsonData.districts.filter(function (district) {
@@ -3612,6 +3635,12 @@
         return upazila.district_id === selectedDistrict;
       });
 
+      // Add "Select" option to upazila select
+      upazilaSelect.prepend($('<option>', {
+        value: '',
+        text: 'Select'
+      }));
+
       // Populate filtered upazilas
       $.each(filteredUpazilas, function (index, upazila) {
         upazilaSelect.append($('<option>', {
@@ -3631,6 +3660,12 @@
       var filteredUpazilas = jsonData.upazilas.filter(function (upazila) {
         return upazila.district_id === selectedDistrict;
       });
+
+      // Add "Select" option to upazila select
+      upazilaSelect.prepend($('<option>', {
+        value: '',
+        text: 'Select'
+      }));
 
       // Populate filtered upazilas
       $.each(filteredUpazilas, function (index, upazila) {

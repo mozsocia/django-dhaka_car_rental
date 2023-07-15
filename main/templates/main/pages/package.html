@@ -199,19 +199,19 @@
       // Get the selected car seat values
       var selectedCarSeatValues = [];
       $('#carseat_filter input[type="checkbox"]:checked').each(function () {
-        selectedCarSeatValues.push($(this).val());
+        selectedCarSeatValues.push($(this).val().toLowerCase());
       });
 
       // Get the selected vehicle name values
       var selectedVehicleNameValues = [];
       $('#carname_filter input[type="checkbox"]:checked').each(function () {
-        selectedVehicleNameValues.push($(this).val());
+        selectedVehicleNameValues.push($(this).val().toLowerCase());
       });
 
       // Get the selected car type values
       var selectedCarTypeValues = [];
       $('#pickup_filter input[type="checkbox"]:checked').each(function () {
-        selectedCarTypeValues.push($(this).val());
+        selectedCarTypeValues.push($(this).val().toLowerCase());
       });
 
       // Loop through each 'div.de-item-list' element
@@ -219,9 +219,9 @@
         // Get the car seat value from the 'span' with id 'carseat'
         var carSeatValue = parseInt($(this).find('span#carseat').text());
         // Get the car name value from the 'span' with id 'carname'
-        var carNameValue = $(this).find('span#carname').text().trim();
+        var carNameValue = $(this).find('span#carname').text().trim().toLowerCase();
         // Get the car type value from the 'span' with id 'cartype'
-        var carTypeValue = $(this).find('span#cartype').text().trim();
+        var carTypeValue = $(this).find('span#cartype').text().trim().toLowerCase();
 
         var showItem = true;
 
