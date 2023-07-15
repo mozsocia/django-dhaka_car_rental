@@ -48,7 +48,7 @@
     <section class="container">
 
 
-        <form name="contactForm" id='contact_form' enctype="multipart/form-data" class="form-border" method="POST"
+        <form id='filter_form' enctype="multipart/form-data" class="form-border" method="POST"
             action="{% url 'register' %}">
             {% csrf_token %}
             <div class="row">
@@ -60,28 +60,58 @@
                     </div>
                 </div>
 
+
+                <label for="to_division">Division:</label>
+                <select id="to_division">
+                    <option value="">Select Division</option>
+                </select>
+
+                <label for="to_district">District:</label>
+                <select id="to_district">
+                    <option value="">Select District</option>
+                </select>
+
+                <label for="to_upazila">Upazila:</label>
+                <select id="uto_pazila">
+                    <option value="">Select Upazila</option>
+                </select>
+
+
+                <label for="from_division">Division:</label>
+                <select id="from_division">
+                    <option value="">Select Division</option>
+                </select>
+
+                <label for="from_district">District:</label>
+                <select id="from_district">
+                    <option value="">Select District</option>
+                </select>
+
+                <label for="from_upazila">Upazila:</label>
+                <select id="from_upazila">
+                    <option value="">Select Upazila</option>
+                </select>
+
+
+
                 <div class="col-md-12">
                     <div class="field-set">
-                        <label>Email Address:</label>
-                        <input type='text' name='email' id='email' class="form-control">
+                        <label>NID Number:</label>
+                        <input type='number' name='NID_number' class="form-control">
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="field-set">
-                        <label>Enter Phone number (username):</label>
-                        <input type='text' name='username' id='username' class="form-control">
+
+                        <input type='number' name='NID_number' class="form-control">
+
+                        <label for="from_upazila">Upazila:</label>
+                        <select id="from_upazila" class="form-control">
+                            <option value="">Select Upazila</option>
+                        </select>
                     </div>
                 </div>
-
-                <!-- <div class="col-md-6">
-            <div class="field-set">
-                <label>Phone:</label>
-                <input type='text' name='phone' class="form-control">
-            </div>
-        </div> -->
-
-
 
                 <div class="col-md-12">
                     <div class="field-set">
@@ -97,22 +127,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
-                    <div class="field-set">
-                        <label>NID back image:</label>
-                        <input type='file' name='nid_image_back' class="form-control">
-                    </div>
-                </div>
-
-
-
-                <div class="col-md-12">
-                    <div class="field-set">
-                        <label>Picture:</label>
-                        <input type='file' name='profile_image' class="form-control">
-                    </div>
-                </div>
-
 
 
                 <div class="col-md-12 mt-4">
@@ -121,9 +135,6 @@
                         <input type='submit' id='send_message' value='Register Now' class="btn-main color-2">
                     </div>
 
-                    <div id='mail_success' class='success'>Your message has been sent successfully.</div>
-                    <div id='mail_fail' class='error'>Sorry, error occured this time sending your message.
-                    </div>
                     <div class="clearfix"></div>
 
                 </div>
@@ -153,47 +164,7 @@
 
 
 {% block script %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        // Add validation rules to your form inputs
-        $('#contact_form').validate({
-            errorClass: 'my-error-class', // Specify your custom error class name here
-            rules: {
-                full_name: 'required',
-                email: {
-                    required: true,
-                    email: true
-                },
-                username: 'required',
-                NID_number: 'required',
-                nid_image_front: 'required',
-                nid_image_back: 'required',
-                profile_image: 'required'
-            },
-            messages: {
-                full_name: 'Please enter your name',
-                email: {
-                    required: 'Please enter your email address',
-                    email: 'Please enter a valid email address'
-                },
-                username: 'Please enter your phone number',
-                NID_number: 'Please enter your NID number',
-                nid_image_front: 'Please select an NID front image',
-                nid_image_back: 'Please select an NID back image',
-                profile_image: 'Please select a profile image'
-            },
-            submitHandler: function (form) {
-                // Submit the form if it is valid
-                form.submit();
-            },
-            onfocusout: function (element) {
-                this.element(element); // Trigger validation on focus out
-            }
-        });
-    });
-</script>
 
 
 

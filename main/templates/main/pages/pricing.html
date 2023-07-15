@@ -30,9 +30,13 @@
   </section>
   <!-- section close -->
 
+
+
   <section id="section-cars">
     <div class="container">
       <div class="row">
+
+
         <div class="col-lg-3">
           <div class="item_filter_group">
             <h4>Car Name</h4>
@@ -127,6 +131,94 @@
         </div>
 
         <div class="col-lg-9">
+          <div class="row mb-2">
+
+            <div class="col-lg-12">
+
+              <form action="" id="filter_locations" class="form-border">
+
+                <div class="row">
+
+                  <div class="col-md-4">
+                    <div class="field-set">
+                      <label for="from_division">From Division:</label>
+                      <select id="from_division" class="form-control">
+                        <option value="">Select Division</option>
+                      </select>
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="field-set">
+
+                      <label for="from_district">From District:</label>
+                      <select id="from_district" class="form-control">
+                        <option value="">Select District</option>
+                      </select>
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="field-set">
+
+                      <label for="from_upazila">From Upazila:</label>
+                      <select id="from_upazila" class="form-control">
+                        <option value="">Select Upazila</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="field-set">
+                      <label for="to_division">To Division:</label>
+                      <select id="to_division" class="form-control">
+                        <option value="">Select Division</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="field-set">
+
+                      <label for="to_district">To District:</label>
+                      <select id="to_district" class="form-control">
+                        <option value="">Select District</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="field-set">
+
+                      <label for="to_upazila">To Upazila:</label>
+                      <select id="to_upazila" class="form-control">
+                        <option value="">Select Upazila</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+                <input type='submit' id='send_message' value='Submit' class="btn-main color-2 me-2">
+                <input type="button" id="reset_filters" value="Reset Filters" class="btn-main color-2">
+
+              </form>
+
+            </div>
+          </div>
+          <hr>
+
+
           <div class="row">
 
             <div class="col-lg-12">
@@ -144,6 +236,8 @@
                     <h5>Name: <span id="carname">{{ x.car_name }}</span></h5>
                     <p>Car seats : <span id="carseat">{{ x.Car_Seats }}</span></p>
                     <p>Car Type : <span id="cartype">{{ x.car_type }}</span></p>
+                    <p>To : <span id="to_upazila">{{ x.to_upazila }}</span></p>
+                    <p>From : <span id="from_upazila">{{ x.from_upazila }}</span></p>
                     <div class="d-atr-group">
                       <ul class="d-atr">
                         <li>{{ x.description }}</li>
@@ -237,6 +331,65 @@
         }
       });
     });
+  });
+</script>
+
+
+{% include 'main/pages/pricing_js.html' %}
+
+<script>
+  $(document).ready(function () {
+    // When the form is submitted
+    $('#filter_locations').on('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      applyFilters()
+
+    });
+
+    // When the reset button is clicked
+    $('#reset_filters').on('click', function () {
+
+      $('#filter_locations select').val('');
+      applyFilters()
+
+    });
+
+    function applyFilters() {
+
+      // Get the selected "To Upazila" and "From Upazila" values
+      var toUpazilaId = $('#filter_locations #to_upazila').val();
+      var fromUpazilaId = $('#filter_locations #from_upazila').val();
+
+      console.log(toUpazilaId, fromUpazilaId)
+
+      // Loop through each 'div.de-item-list' element
+      $('div.de-item-list').each(function () {
+        // Get the "To Upazila" and "From Upazila" IDs from the data attributes
+        var itemToUpazilaId = $(this).find('span#to_upazila').text().trim(); //$(this).data('to-upazila');
+        var itemFromUpazilaId = $(this).find('span#from_upazila').text().trim(); // $(this).data('from-upazila');
+
+        console.log(itemToUpazilaId, itemFromUpazilaId)
+
+        var showItem = true;
+
+        if (toUpazilaId && toUpazilaId !== itemToUpazilaId) {
+          showItem = false;
+        }
+
+        if (fromUpazilaId && fromUpazilaId !== itemFromUpazilaId) {
+          showItem = false;
+        }
+
+        if (showItem) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
+
+
   });
 </script>
 
