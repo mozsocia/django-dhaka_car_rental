@@ -4,6 +4,27 @@
 
 {% block style %}
 
+<style>
+    .my-error-class {
+        color: red;
+        font-size: 1rem;
+        display: block;
+        margin-top: 5px;
+    }
+
+    #contact_form label.my-error-class {
+        color: red;
+        font-size: 1rem;
+        display: block;
+        margin-top: 5px;
+    }
+
+    #contact_form input.my-error-class {
+        border: 1px dashed red;
+        font-weight: 300;
+        color: red;
+    }
+</style>
 
 {% endblock style %}
 
@@ -40,17 +61,17 @@
                     <div class="spacer-10"></div>
 
                     {% if normal_error %}
-                    <ul class="errors">
+                    <ul class="my-error-class">
                         {% for key, value in normal_error.items %}
 
-                        <li>{{ key }}: {{ value }}</li>
+                        <li class="">{{ key }}: {{ value }}</li>
                         {% endfor %}
 
                     </ul>
                     {% endif %}
 
                     {% if form_error %}
-                    <ul class="errors">
+                    <ul class="my-error-class">
                         {% for field, field_errors in form_error.items %}
                         {% for error in field_errors %}
                         <li>{{ field }}: {{ error }}</li>
@@ -168,8 +189,55 @@
 <!-- content close -->
 {% endblock %}
 
-
 {% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Add validation rules to your form inputs
+        $('#contact_form').validate({
+            errorClass: 'my-error-class', // Specify your custom error class name here
+            rules: {
+                full_name: 'required',
+                email: {
+                    required: true,
+                    email: true
+                },
+                username: {
+                    required: true,
+                    digits: true // Ensures that the value is a number
+                },
+                NID_number: 'required',
+                nid_image_front: 'required',
+                nid_image_back: 'required',
+                profile_image: 'required'
+            },
+            messages: {
+                full_name: 'Please enter your name',
+                email: {
+                    required: 'Please enter your email address',
+                    email: 'Please enter a valid email address'
+                },
+                username: {
+                    required: 'Please enter your phone number',
+                    digits: 'Please enter a valid phone number (numbers only)'
+                },
+                NID_number: 'Please enter your NID number',
+                nid_image_front: 'Please select an NID front image',
+                nid_image_back: 'Please select an NID back image',
+                profile_image: 'Please select a profile image'
+            },
+            submitHandler: function (form) {
+                // Submit the form if it is valid
+                form.submit();
+            },
+            onfocusout: function (element) {
+                this.element(element); // Trigger validation on focus out
+            }
+        });
+    });
+</script>
+
 
 
 {% endblock script %}
