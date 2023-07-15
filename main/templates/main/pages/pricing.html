@@ -209,7 +209,7 @@
 
 
 
-                <input type='submit' id='send_message' value='Submit' class="btn-main color-2 me-2">
+                <input type='button' id='filter_button' value='Submit' class="btn-main color-2 me-2">
                 <input type="button" id="reset_filters" value="Reset" class="btn-main color-2">
 
               </form>
@@ -340,7 +340,7 @@
 <script>
   $(document).ready(function () {
     // When the form is submitted
-    $('#filter_locations').on('submit', function (event) {
+    $('#filter_button').on('click', function (event) {
       event.preventDefault(); // Prevent the form from submitting normally
 
       applyFilters()
