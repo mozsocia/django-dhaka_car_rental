@@ -126,6 +126,7 @@ class Pricing(models.Model):
     price = models.IntegerField()
     Car_Seats = models.CharField(max_length=100)
     car_type = models.CharField(max_length=100)
+    
 
 
 

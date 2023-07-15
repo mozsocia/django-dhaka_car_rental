@@ -40,108 +40,94 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="item_filter_group">
-            <h4>Vehicle Name</h4>
-            <div class="de_form">
+            <h4>Car Name</h4>
+            <div class="de_form" id="carname_filter">
               <div class="de_checkbox">
-                <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox" value="vehicle_type_1">
+                <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox" value="Private Sedan Car">
                 <label for="vehicle_type_1">Private Sedan Car</label>
               </div>
 
               <div class="de_checkbox">
-                <input id="vehicle_type_2" name="vehicle_type_2" type="checkbox" value="vehicle_type_2">
+                <input id="vehicle_type_2" name="vehicle_type_2" type="checkbox" value="Premium Sedan Car">
                 <label for="vehicle_type_2">Premium Sedan Car</label>
               </div>
 
               <div class="de_checkbox">
-                <input id="vehicle_type_3" name="vehicle_type_3" type="checkbox" value="vehicle_type_3">
+                <input id="vehicle_type_3" name="vehicle_type_3" type="checkbox" value="X Noah Car">
                 <label for="vehicle_type_3">X Noah Car</label>
               </div>
               <div class="de_checkbox">
-                <input id="vehicle_type_3" name="vehicle_type_3" type="checkbox" value="vehicle_type_3">
-                <label for="vehicle_type_3">Prado Car</label>
+                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="Prado Car">
+                <label for="vehicle_type_4">Prado Car</label>
               </div>
 
               <div class="de_checkbox">
-                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
-                <label for="vehicle_type_4">Noah x / Hybrid</label>
+                <input id="vehicle_type_5" name="vehicle_type_5" type="checkbox" value="Noah x / Hybrid">
+                <label for="vehicle_type_5">Noah x / Hybrid</label>
               </div>
               <div class="de_checkbox">
-                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
-                <label for="vehicle_type_4">Hiace Super GL</label>
+                <input id="vehicle_type_6" name="vehicle_type_6" type="checkbox" value="Hiace Super GL">
+                <label for="vehicle_type_6">Hiace Super GL</label>
               </div>
               <div class="de_checkbox">
-                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
-                <label for="vehicle_type_4">Grand Cavin</label>
+                <input id="vehicle_type_7" name="vehicle_type_7" type="checkbox" value="Grand Cavin">
+                <label for="vehicle_type_7">Grand Cavin</label>
               </div>
               <div class="de_checkbox">
-                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
-                <label for="vehicle_type_4">Mini Coaster</label>
+                <input id="vehicle_type_8" name="vehicle_type_8" type="checkbox" value="Mini Coaster">
+                <label for="vehicle_type_8">Mini Coaster</label>
               </div>
+
+
+
+            </div>
+            <br>
+
+            <h4>Car Seats</h4>
+            <div class="de_form" id="carseat_filter">
+
+              {% for car_seat in car_seats %}
+
               <div class="de_checkbox">
-                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
-                <label for="vehicle_type_4">Picup Van</label>
+                <input id="car_seat_{{ car_seat.Car_Seats }}" name="car_seat_{{ car_seat.Car_Seats }}" type="checkbox"
+                  value="{{ car_seat.Car_Seats }}">
+                <label for="car_seat_{{ car_seat.Car_Seats }}">{{ car_seat.Car_Seats }} seats</label>
               </div>
-              
+
+              {% endfor %}
+
+              <!-- <div class="de_checkbox">
+                <input id="car_seat_2" name="car_seat_2" type="checkbox" value="car_seat_4">
+                <label for="car_seat_2">4 seats</label>
+              </div> -->
+
+
 
             </div>
           </div>
 
-         
+
 
           <div class="item_filter_group">
-            <h4>Car Seats</h4>
-            <div class="de_form">
 
-              <div class="de_checkbox">
-                <input id="car_seat_2" name="car_seat_2" type="checkbox" value="car_seat_4">
-                <label for="car_seat_2">4 seats</label>
-              </div>
-
-              <div class="de_checkbox">
-                <input id="car_seat_3" name="car_seat_3" type="checkbox" value="car_seat_6">
-                <label for="car_seat_3">6 seats</label>
-              </div>
-
-              <div class="de_checkbox">
-                <input id="car_seat_10" name="car_seat_10" type="checkbox" value="car_seat_10">
-                <label for="car_seat_10">10 seats</label>
-              </div>
-              <div class="de_checkbox">
-                <input id="car_seat_12" name="car_seat_12" type="checkbox" value="car_seat_12">
-                <label for="car_seat_12">12 seats</label>
-              </div>
-              <div class="de_checkbox">
-                <input id="car_seat_14" name="car_seat_14" type="checkbox" value="car_seat_14">
-                <label for="car_seat_14">14 seats</label>
-              </div>
-              <div class="de_checkbox">
-                <input id="car_seat_28" name="car_seat_28" type="checkbox" value="car_seat_28">
-                <label for="car_seat_28">28 seats</label>
-              </div>
-              <div class="de_checkbox">
-                <input id="car_seat_32" name="car_seat_32" type="checkbox" value="car_seat_32">
-                <label for="car_seat_32">32 seats</label>
-              </div>
-
-            </div>
             <h4>Picup Van</h4>
-            <div class="de_form">
+            <div class="de_form" id="pickup_filter">
               <div class="de_checkbox">
-                <input id="car_seat_1ton" name="car_seat_1ton" type="checkbox" value="car_seat_1ton">
-                <label for="car_seat_1ton">1 ton </label>
+                <input id="car_seat_1ton" name="car_seat_1ton" type="checkbox" value="Picup Van 1 ton">
+                <label for="car_seat_1ton">1 ton</label>
               </div>
               <div class="de_checkbox">
-                <input id="car_seat_2ton" name="car_seat_2ton" type="checkbox" value="car_seat_2ton">
+                <input id="car_seat_2ton" name="car_seat_2ton" type="checkbox" value="Picup Van 2 ton">
                 <label for="car_seat_2ton">2 ton </label>
               </div>
               <div class="de_checkbox">
-                <input id="car_seat_3ton" name="car_seat_3ton" type="checkbox" value="car_seat_3ton">
+                <input id="car_seat_3ton" name="car_seat_3ton" type="checkbox" value="Picup Van 3 ton">
                 <label for="car_seat_3ton">3 ton </label>
               </div>
             </div>
           </div>
 
-          
+
 
         </div>
 
@@ -150,37 +136,39 @@
 
             <div class="col-lg-12">
               {% for x in package %}
-                <div class="de-item-list mb30">
-                  <div class="d-img">
-                    <img src="{{ x.image.url }}" class="img-fluid" alt="">
-                  </div>
-                                   
-                    
-                    <div class="d-info">
-                      <div class="d-text">
-                        <h5>{{ x.title }}</h5>
-                        <h6>{{ x.caption }}</h6>
-                        <h5>Name:{{ x.car_name }}</h5>
-                        <div class="d-atr-group">
-                          <ul class="d-atr">
-                            <li>{{ x.description }}</li>
-                          </ul>
-                        </div>
-                      </div>
+              <div class="de-item-list mb30">
+                <div class="d-img">
+                  <img src="{{ x.image.url }}" class="img-fluid" alt="">
+                </div>
+
+
+                <div class="d-info">
+                  <div class="d-text">
+                    <h5>{{ x.title }}</h5>
+                    <h6>{{ x.caption }}</h6>
+                    <h5>Name: <span id="carname">{{ x.car_name }}</span></h5>
+                    <p>Car seats : <span id="carseat">{{ x.Car_Seats }}</span></p>
+                    <p>Car Type : <span id="cartype">{{ x.car_type }}</span></p>
+                    <div class="d-atr-group">
+                      <ul class="d-atr">
+                        <li>{{ x.description }}</li>
+                      </ul>
                     </div>
-                    
-                      
-                  <div class="d-price">
-                    Price <span>{{ x.price }} ৳</span>
-                    <a class="btn-main" href="car-single.html">Rent Now</a>
                   </div>
-                  <div class="clearfix"></div>
-                </div> 
+                </div>
+
+
+                <div class="d-price">
+                  Price <span>{{ x.price }} ৳</span>
+                  <a class="btn-main" href="car-single.html">Rent Now</a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
               {% endfor %}
-                
+
             </div>
 
-            
+
 
 
 
@@ -196,3 +184,69 @@
 </div>
 <!-- content close -->
 {% endblock %}
+
+
+
+{% block script %}
+
+
+
+
+<script>
+  $(document).ready(function () {
+    // When any checkbox inside 'div' with id 'carseat_filter', 'carname_filter', or 'pickup_filter' is clicked
+    $('#carseat_filter input[type="checkbox"], #carname_filter input[type="checkbox"], #pickup_filter input[type="checkbox"]').on('click', function () {
+      // Get the selected car seat values
+      var selectedCarSeatValues = [];
+      $('#carseat_filter input[type="checkbox"]:checked').each(function () {
+        selectedCarSeatValues.push($(this).val());
+      });
+
+      // Get the selected vehicle name values
+      var selectedVehicleNameValues = [];
+      $('#carname_filter input[type="checkbox"]:checked').each(function () {
+        selectedVehicleNameValues.push($(this).val());
+      });
+
+      // Get the selected car type values
+      var selectedCarTypeValues = [];
+      $('#pickup_filter input[type="checkbox"]:checked').each(function () {
+        selectedCarTypeValues.push($(this).val());
+      });
+
+      // Loop through each 'div.de-item-list' element
+      $('div.de-item-list').each(function () {
+        // Get the car seat value from the 'span' with id 'carseat'
+        var carSeatValue = parseInt($(this).find('span#carseat').text());
+        // Get the car name value from the 'span' with id 'carname'
+        var carNameValue = $(this).find('span#carname').text().trim();
+        // Get the car type value from the 'span' with id 'cartype'
+        var carTypeValue = $(this).find('span#cartype').text().trim();
+
+        var showItem = true;
+
+        if (selectedCarTypeValues.length < 1 && selectedCarSeatValues.length > 0 && !selectedCarSeatValues.includes(String(carSeatValue))) {
+          showItem = false;
+        }
+
+        if (selectedVehicleNameValues.length > 0 && !selectedVehicleNameValues.includes(carNameValue)) {
+          showItem = false;
+        }
+
+        if (selectedCarTypeValues.length > 0 && !selectedCarTypeValues.includes(carTypeValue)) {
+          showItem = false;
+        }
+
+        if (showItem) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+{% endblock script %}

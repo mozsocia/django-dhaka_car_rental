@@ -8,6 +8,7 @@ from .models import *
 from django.db import transaction
 from pprint import pprint
 from django.db.models import Q
+from django.db.models import Count
 
 from django.contrib.auth import logout
 
@@ -57,6 +58,7 @@ def contact(request):
     return render(request, 'main/pages/contact.html',context)
 
 def pricing(request):
+    car_seats = Pricing.objects.values('Car_Seats').annotate(count=Count('Car_Seats')).values('Car_Seats')
     query = request.GET.get('query') # Assuming the query parameter is named 'query'
 
     if query:
@@ -66,7 +68,7 @@ def pricing(request):
     else:
         pricing = Pricing.objects.all()
 
-    return render(request, 'main/pages/pricing.html',{'pricing': pricing})
+    return render(request, 'main/pages/pricing.html',{'pricing': pricing , 'car_seats':car_seats})
     
 def pickup(request):
     
@@ -85,6 +87,8 @@ def pickup(request):
 
 def package(request):
     query = request.GET.get('query')  # Assuming the query parameter is named 'query'
+    
+    car_seats = Package_car.objects.values('Car_Seats').annotate(count=Count('Car_Seats')).values('Car_Seats')
 
     if query:
         package = Package_car.objects.filter(
@@ -93,7 +97,7 @@ def package(request):
     else:
         package = Package_car.objects.all()
 
-    return render(request, 'main/pages/package.html',{'package': package})
+    return render(request, 'main/pages/package.html',{'package': package, 'car_seats': car_seats})
 
 def test(request):
     return render(request, 'main/pages/test.html')

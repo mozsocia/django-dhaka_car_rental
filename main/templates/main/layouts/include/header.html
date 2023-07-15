@@ -143,8 +143,8 @@
                                     {% get_packages as package_list %}
                                     {% for x in package_list %}
 
-                                    <li><a class="menu-item" href="/package/?query={{ x.menu }}">
-                                            {{ x.menu }}</a>
+                                    <li><a class="menu-item" href="/package/?query={{ x.0 }}">
+                                            {{ x.1 }}</a>
                                     </li>
 
                                     {% endfor %}
