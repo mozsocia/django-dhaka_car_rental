@@ -8,6 +8,9 @@ from .models import *
 from django.db import transaction
 from pprint import pprint
 from django.db.models import Q
+from django.db.models import Count
+from django.db import IntegrityError
+from django.db import transaction
 
 from django.contrib.auth import logout
 
@@ -57,6 +60,7 @@ def contact(request):
     return render(request, 'main/pages/contact.html',context)
 
 def pricing(request):
+    car_seats = Pricing.objects.values('Car_Seats').annotate(count=Count('Car_Seats')).values('Car_Seats')
     query = request.GET.get('query') # Assuming the query parameter is named 'query'
 
     if query:
@@ -66,7 +70,7 @@ def pricing(request):
     else:
         pricing = Pricing.objects.all()
 
-    return render(request, 'main/pages/pricing.html',{'pricing': pricing})
+    return render(request, 'main/pages/pricing.html',{'pricing': pricing , 'car_seats':car_seats})
     
 def pickup(request):
     
@@ -85,6 +89,8 @@ def pickup(request):
 
 def package(request):
     query = request.GET.get('query')  # Assuming the query parameter is named 'query'
+    
+    car_seats = Package_car.objects.values('Car_Seats').annotate(count=Count('Car_Seats')).values('Car_Seats')
 
     if query:
         package = Package_car.objects.filter(
@@ -93,7 +99,7 @@ def package(request):
     else:
         package = Package_car.objects.all()
 
-    return render(request, 'main/pages/package.html',{'package': package})
+    return render(request, 'main/pages/package.html',{'package': package, 'car_seats': car_seats})
 
 def test(request):
     return render(request, 'main/pages/test.html')
@@ -150,7 +156,6 @@ from django.shortcuts import render, redirect
 
 
 @guest_only
-@transaction.atomic
 def register(request):
     normal_error = {}
     form_error = None
@@ -176,16 +181,17 @@ def register(request):
 
 
             try:
+                with transaction.atomic():
                 # Create a new user
-                user = User.objects.create_user(username=username, password='123123123', email=email)
+                    user = User.objects.create_user(username=username, password='123123123', email=email)
 
-                # Create a profile for the user
-                profile = FrontProfile.objects.create(user=user, full_name=full_name,NID_number=NID_number, nid_image_front=nid_image_front, nid_image_back=nid_image_back, profile_image = profile_image )
+                    # Create a profile for the user
+                    profile = FrontProfile.objects.create(user=user, full_name=full_name,NID_number=NID_number, nid_image_front=nid_image_front, nid_image_back=nid_image_back, profile_image = profile_image )
 
                 # Redirect to login page or any other page after successful registration
                 return redirect('login_user')
             
-            except Exception as e:
+            except IntegrityError  as e:
                 if 'UNIQUE constraint failed: auth_user.username' in str(e):
                     normal_error['username'] = "Username already in use"
                 

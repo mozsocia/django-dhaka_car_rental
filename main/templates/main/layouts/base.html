@@ -63,7 +63,43 @@
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/designesia.js' %}"></script>
 
-    
+
+    <!-- Include Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,bn',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google-translate-element'
+            );
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Your custom JavaScript code -->
+    <script>
+        $(document).ready(function () {
+            $('.language-list').click(function () {
+                var selectedLanguage = $(this).attr('data-google-lang');
+                console.log('Selected language:', selectedLanguage);
+                googleTranslateElementInit();
+                changeLanguage(selectedLanguage);
+            });
+        });
+
+        function changeLanguage(language) {
+            var select = $('.goog-te-combo');
+            select.val(language);
+            select.change();
+        }
+    </script>
+
+
+
     {% block script %}
 
     {% endblock script %}

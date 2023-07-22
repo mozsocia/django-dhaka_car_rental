@@ -2,10 +2,21 @@
 {% load static %}
 
 
+
+
 {% block style %}
 
+<style>
+    .my-error-class {
+        color: red;
+        font-size: 1rem;
+        display: block;
+        margin-top: 5px;
+    }
+</style>
 
 {% endblock style %}
+
 
 {% block content %}
 
@@ -17,7 +28,7 @@
 
     <!--subheader section begin -->
     <section id="subheader" class="jarallax text-light">
-        <img src="{% static 'images/background/subheader.jpg' %}" class="jarallax-img" alt="">
+        <img src="{% static 'images/background/Prado.jpg' %}" class="jarallax-img" alt="">
         <div class="center-y relative text-center">
             <div class="container">
                 <div class="row">
@@ -35,26 +46,29 @@
     <section aria-label="section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 offset-md-4"> 
-                    {% if error %}
+                <div class="col-md-8 offset-md-4">
+                    <div class="my-error-class">
+                        {% if error %}
                         <p>{{ error }}</p>
-                    {% endif %}   
+                        {% endif %}
 
-                    {% if form_error %}
-                    <ul class="form_error">
-                        {% for field, field_form_error in form_error.items %}
-                        {% for form_error in field_form_error %}
-                        <li>{{ field }}: {{ form_error }}</li>
-                        {% endfor %}
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
+                        {% if form_error %}
+                        <ul class="form_error">
+                            {% for field, field_form_error in form_error.items %}
+                            {% for form_error in field_form_error %}
+                            <li>{{ field }}: {{ form_error }}</li>
+                            {% endfor %}
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
                     <div class="spacer-10"></div>
-                    <form name="contactForm" id='contact_form' class="form-border" method="post" action="{% url 'login_user' %}">
+                    <form name="contactForm" id='contact_form' class="form-border" method="post"
+                        action="{% url 'login_user' %}">
                         {% csrf_token %}
 
                         <div class="row">
-  
+
 
                             <div class="row">
                                 <div class="col-md-6">
@@ -87,7 +101,7 @@
                                             class="btn-main color-2">
                                     </div>
 
-                                    
+
                                     <div class="clearfix"></div>
 
                                 </div>

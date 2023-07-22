@@ -1,7 +1,7 @@
+import json
 from django.db import models
-
-
-
+from django.contrib.staticfiles.storage import staticfiles_storage
+from .data.locations import get_locations
 class CompanyDetails(models.Model):
     facebook_link = models.URLField(blank=True)
     linkedin_link = models.URLField(blank=True)
@@ -126,8 +126,27 @@ class Pricing(models.Model):
     price = models.IntegerField()
     Car_Seats = models.CharField(max_length=100)
     car_type = models.CharField(max_length=100)
+    
+    
+    divisions = []
+    districts = []
+    upazilas = []
+    
+    data = get_locations()
 
 
+    divisions = sorted([(division['name'], division['name']) for division in data['divisions']])
+    districts = sorted([(district['name'], district['name']) for district in data['districts']])
+    upazilas = sorted([(upazila['name'], upazila['name']) for upazila in data['upazilas']])
+
+
+    to_division = models.CharField(max_length=255, choices=divisions, blank=True, null=True)
+    to_district = models.CharField(max_length=255, choices=districts, blank=True, null=True)
+    to_upazila = models.CharField(max_length=255, choices=upazilas, blank=True, null=True)
+    
+    from_division = models.CharField(max_length=255, choices=divisions,blank=True, null=True)
+    from_district = models.CharField(max_length=255, choices=districts,blank=True, null=True)
+    from_upazila = models.CharField(max_length=255, choices=upazilas,blank=True, null=True)
 
     menu_choices = (
         ('Hourly Car Rental', 'Hourly Car Rental'),

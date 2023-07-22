@@ -15,10 +15,10 @@
         <div class="container">
             <div class="topbar-left xs-hide">
                 <div class="topbar-widget">
-                    <div class="topbar-widget"><a href="tell:{{ details.number1 }}"><i class="fa fa-phone">
+                    <div class="topbar-widget"><a href="tel:{{ details.number1 }}"><i class="fa fa-phone">
 
                             </i>{{ details.number1 }}</a></div>
-                    <div class="topbar-widget"><a href="tell:{{ details.number2 }}"><i class="fa fa-phone">
+                    <div class="topbar-widget"><a href="tel:{{ details.number2 }}"><i class="fa fa-phone">
 
                             </i>{{ details.number2 }}</a></div>
                     <div class="topbar-widget sm-hide"><a href="mailto:{{ details.email }}"><i
@@ -143,15 +143,15 @@
                                     {% get_packages as package_list %}
                                     {% for x in package_list %}
 
-                                    <li><a class="menu-item" href="/package/?query={{ x.menu }}">
-                                            {{ x.menu }}</a>
+                                    <li><a class="menu-item" href="/package/?query={{ x.0 }}">
+                                            {{ x.1 }}</a>
                                     </li>
 
                                     {% endfor %}
                                 </ul>
                             </li>
 
-                            <li><a class="menu-item" href="/information/">INFORMATION</a>
+                            <li><a class="menu-item" href="#">INFORMATION</a>
                                 <ul>
                                     <li><a class="menu-item" href="{% url 'our-cars' %}">Our Cars</a></li>
                                     <li><a class="menu-item" href="{% url 'our-clients' %}">Our Clients</a></li>
@@ -168,17 +168,14 @@
                             <li><a class="menu-item" href="/contact/">CONTACT US</a>
                             </li>
 
-                            <li class="li-n-pickup"><a class="menu-item">Language</a>
-                                <ul>
-                                    <li><a class="menu-item">English</a></li>
-                                    <li><a class="menu-item">Bangla</a></li>
+                            <!-- <li class="li-n-pickup"><a class="menu-item"> ussss</a>
 
-                                </ul>
 
-                            </li>
+                            </li> -->
 
 
                         </ul>
+                        <div id="google-translate-element"></div>
                     </div>
                     <div class="de-flex-col">
                         <div class="menu_side_area">

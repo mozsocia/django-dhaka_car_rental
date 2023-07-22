@@ -16,7 +16,7 @@
 
     <!--subheader section begin -->
     <section id="subheader" class="jarallax text-light">
-        <img src="{% static 'images/background/subheader.jpg' %}" class="jarallax-img" alt="">
+        <img src="{% static 'images/background/Prado.jpg' %}" class="jarallax-img" alt="">
         <div class="center-y relative text-center">
             <div class="container">
                 <div class="row">
@@ -35,15 +35,15 @@
 
 
     <section id="section-car-details">
-        
+
         {% for x in pickup %}
-        <div class="container border-shadow-primary p-4 pb-2 mb-3" >
+        <div class="container border-shadow-primary p-4 pb-2 mb-3">
             <div class="row g-5">
                 <div class="col-lg-5 ">
-                     <div class="car-img">
+                    <div class="car-img">
                         <img src="{{ x.image.url }}" alt="">
                     </div>
- 
+
                 </div>
 
                 <div class="col-lg-3">
@@ -58,23 +58,23 @@
                     </ul>
                     <p>{{ x.description }}</p>
 
-                    
+
                 </div>
 
                 <div class="col-lg-3">
                     <div class="de-price text-center">
                         rent
                         <h3>{{ x.price }} ৳</h3>
-                    <a class="btn-main" href="tell:+8801967-914140">Call Now</a>
+                        <a class="btn-main" href="tel:+8801967-914140">Call Now</a>
 
                     </div>
                     <div class="spacer-30"></div>
-                   
-                </div>                
+
+                </div>
             </div>
         </div>
         {% endfor %}
-            
+
 
     </section>
 
