@@ -160,7 +160,15 @@
 
                 <div class="d-price">
                   Price <span>{{ x.price }} ৳</span>
+                  {% if user.is_authenticated %}
                   <a class="btn-main" href="tel:+8801967-914140">Call Now</a>
+                  {% else %}
+                  <a class="btn-main call-btn" href="javascript:void(0);">Call Now</a>
+                  <p class="login-message" style="display: none;">
+                    Please <a href="{% url 'login_user' %}">login</a> or <a href="{% url 'register' %}">register</a> to
+                    make a call.
+                  </p>
+                  {% endif %}
                 </div>
                 <div class="clearfix"></div>
               </div>

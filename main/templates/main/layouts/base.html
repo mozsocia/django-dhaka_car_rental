@@ -23,6 +23,8 @@
     <link href="{% static 'css/coloring.css' %}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="{% static 'css/colors/scheme-01.css' %}" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 {% block style %}
@@ -62,6 +64,7 @@
     ================================================== -->
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/designesia.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 
     <!-- Include Google Translate API -->
@@ -96,6 +99,57 @@
             select.val(language);
             select.change();
         }
+    </script>
+
+    <script>
+        var callBtns = document.querySelectorAll('.call-btn');
+        var loginMessages = document.querySelectorAll('.login-message');
+
+        callBtns.forEach(function (btn, index) {
+            btn.addEventListener('click', function () {
+                loginMessages[index].style.display = 'block';
+
+
+                Toastify({
+                    text: "Please login or register to make a call.",
+                    duration: 2500, // 5 seconds
+                    gravity: "top",
+                    position: "center",
+                    backgroundColor: "#ff4500",
+                    stopOnFocus: true,
+                    offset: {
+                        x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                    },
+                }).showToast();
+
+            });
+        });
+    </script>
+
+
+    <script>
+        var callBtns = document.querySelectorAll('.call-btn-sin');
+
+
+        callBtns.forEach(function (btn, index) {
+            btn.addEventListener('click', function () {
+
+                Toastify({
+                    text: "Please login or register to make a call.",
+                    duration: 2500, // 5 seconds
+                    gravity: "top",
+                    position: "center",
+                    backgroundColor: "#ff4500",
+                    stopOnFocus: true,
+                    offset: {
+                        x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                    },
+                }).showToast();
+
+            });
+        });
     </script>
 
 
