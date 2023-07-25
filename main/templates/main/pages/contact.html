@@ -90,10 +90,26 @@
                         {% for x in company_det %}
                         <address class="s1">
                             <span><i class="id-color fa fa-map-marker fa-lg"></i>{{ x.address }}</span>
-                            <span><i class="id-color fa fa-phone fa-lg"></i><a href="tel:{{ x.number1 }}">
-                                    {{ x.number1}}</a></span>
-                            <span><i class="id-color fa fa-phone fa-lg"></i><a href="tel:{{ x.number2 }}">
-                                    {{ x.number2}}</a></span>
+
+                            <span><i class="id-color fa fa-phone fa-lg"></i>
+                                {% if user.is_authenticated %}
+                                <a class="" href="tel:+8801967-914140"> +8801967-914140</a>
+                                {% else %}
+                                <a class="call-btn-sin" href="javascript:void(0);">+8801967-914140</a>
+                                {% endif %}
+
+                            </span>
+                            <span><i class="id-color fa fa-phone fa-lg"></i>
+
+                                {% if user.is_authenticated %}
+                                <a class="" href="tel:+8801797-777101"> +8801797-777101</a>
+                                {% else %}
+                                <a class="call-btn-sin" href="javascript:void(0);">+8801797-777101</a>
+                                {% endif %}
+                            </span>
+
+
+
                             <span><i class="id-color fa fa-envelope-o fa-lg"></i><a href="mailto:{{ x.email }}">
                                     {{x.email }}</a></span>
 

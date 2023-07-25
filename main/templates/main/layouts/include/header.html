@@ -15,12 +15,33 @@
         <div class="container">
             <div class="topbar-left xs-hide">
                 <div class="topbar-widget">
-                    <div class="topbar-widget"><a href="tel:{{ details.number1 }}"><i class="fa fa-phone">
+                    <div class="topbar-widget">
+                        {% if user.is_authenticated %}
+                        <a class="" href="tel:{{ details.number1 }}"> <i class="fa fa-phone">
+                            </i>{{ details.number1 }}</a>
+                        {% else %}
+                        <a class="call-btn-sin" href="javascript:void(0);"><i class="fa fa-phone">
+                            </i>{{ details.number1 }}</a>
 
-                            </i>{{ details.number1 }}</a></div>
-                    <div class="topbar-widget"><a href="tel:{{ details.number2 }}"><i class="fa fa-phone">
+                        {% endif %}
 
-                            </i>{{ details.number2 }}</a></div>
+                    </div>
+
+
+                    <div class="topbar-widget">
+                        {% if user.is_authenticated %}
+                        <a class="" href="tel:{{ details.number2 }}"> <i class="fa fa-phone">
+                            </i>{{ details.number2 }}</a>
+                        {% else %}
+                        <a class="call-btn-sin" href="javascript:void(0);"><i class="fa fa-phone">
+                            </i>{{ details.number2 }}</a>
+
+                        {% endif %}
+
+                    </div>
+
+
+
                     <div class="topbar-widget sm-hide"><a href="mailto:{{ details.email }}"><i
                                 class="fa fa-envelope"></i>{{ details.email }}</a></div>
                     <!--<div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>-->
